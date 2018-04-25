@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35px"
+        android:layout_marginRight="35px"
+        android:layout_marginTop="35px"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/hot_floor_details_adapter_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="御道庄园"
+                android:textColor="#000"
+                android:textSize="60px" />
+
+            <TextView
+                android:id="@+id/hot_floor_details_adapter_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30px"
+                android:text="期房在售"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/wuzheng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hot_floor_details_adapter_title"
+                android:layout_marginTop="15px"
+                android:text="五证齐全" />
+
+            <TextView
+                android:id="@+id/chewei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hot_floor_details_adapter_title"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="15px"
+                android:layout_toRightOf="@id/wuzheng"
+                android:text="车位充足" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hot_floor_details_adapter_title"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="15px"
+                android:layout_toRightOf="@id/chewei"
+                android:text="万科认证" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="10px"
+            android:background="#000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="住宅:"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/hot_floor_details_adapter_average_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:text="91000元/m²"
+                android:textColor="@color/Orange" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15px"
+                android:text="23小时前更新"
+                android:textSize="20px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="户型面积:"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/hot_floor_details_adapter_measure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:text="40-226平方米"
+                android:textColor="#000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15px"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地址:"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/hot_floor_details_adapter_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:text="朝阳区........."
+                android:textColor="@color/blue" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:layout_marginTop="20px"
+        android:background="@drawable/bg_view" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hot_floor_details_adapter_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35px"
+            android:layout_marginTop="25px"
+            android:text="楼盘概括"
+            android:textColor="#000"
+            android:textSize="50px" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_marginTop="15px"
+            android:background="#eee" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35px"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="优惠房价" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_average_price_two"
+                    android:layout_width="320px"
+                    android:layout_height="wrap_content"
+                    android:text="4900元/m²"
+                    android:textColor="@color/orange" />
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="楼层" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_floor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5层"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="电梯情况" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_elevator"
+                    android:layout_width="320px"
+                    android:layout_height="wrap_content"
+                    android:text="有电梯"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="朝向" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_towards"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="南北向"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="房屋类型" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_house_type"
+                    android:layout_width="320px"
+                    android:layout_height="wrap_content"
+                    android:text="普通住宅"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="户型" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2室一厅一卫"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="面积" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_measure_two"
+                    android:layout_width="320px"
+                    android:layout_height="wrap_content"
+                    android:text="建面74m²"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="工程进度" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_state_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="在售中"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="绿化率" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_afforest"
+                    android:layout_width="320px"
+                    android:layout_height="wrap_content"
+                    android:text="30.00%"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="装修情况" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_fitment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="毛胚"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="产权" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_equity"
+                    android:layout_width="320px"
+                    android:layout_height="wrap_content"
+                    android:text="70年"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:layout_width="230px"
+                    android:layout_height="wrap_content"
+                    android:text="建筑年代" />
+
+                <TextView
+                    android:id="@+id/hot_floor_details_adapter_house_times"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2017"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/one_twink"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_green"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <houseproperty.manyihe.com.myh_android.utils.CompatToolbar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_green"></houseproperty.manyihe.com.myh_android.utils.CompatToolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_green"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/one_home"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_marginLeft="25px"
+            android:layout_marginTop="15px"
+            android:src="@mipmap/sweep" />
+
+        <EditText
+            android:id="@+id/oneF_Et"
+            android:layout_width="820px"
+            android:layout_height="90px"
+            android:layout_marginLeft="22px"
+            android:layout_marginTop="15px"
+            android:background="@null"
+            android:focusable="false"
+            android:gravity="center_horizontal"
+            android:hint="上满易何,搜好房"
+            android:imeOptions="actionSearch"
+            android:singleLine="true" />
+    </LinearLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/home_banner"
+                android:layout_width="match_parent"
+                android:layout_height="500px"
+                android:layout_marginTop="25px"
+                android:background="@color/white"></com.youth.banner.Banner>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20px"
+                android:background="@drawable/bg_view" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/new_house"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/new_house"
+                    android:gravity="center_horizontal"
+                    android:text="新房" />
+
+                <RadioButton
+                    android:id="@+id/house_loan"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/house_loan"
+                    android:gravity="center_horizontal"
+                    android:text="房贷" />
+
+                <RadioButton
+                    android:id="@+id/sellers"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/sellers"
+                    android:gravity="center_horizontal"
+                    android:text="卖房" />
+
+                <RadioButton
+                    android:id="@+id/message"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/message"
+                    android:gravity="center_horizontal"
+                    android:text="咨询" />
+
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30px"
+                android:background="@drawable/bg_view" />
+
+            <RelativeLayout
+                android:id="@+id/home_relative1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    android:id="@+id/view_green1"
+                    android:layout_width="20px"
+                    android:layout_height="60px"
+                    android:background="@color/green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35px"
+                    android:layout_toRightOf="@id/view_green1"
+                    android:text="热门楼盘"
+                    android:textColor="#000"
+                    android:textSize="50px" />
+
+                <Button
+                    android:id="@+id/home_btnMoreHot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30px"
+                    android:background="@null"
+                    android:text="更多" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/hot_rv_hot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:descendantFocusability="afterDescendants"
+                android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30px"
+                android:background="@drawable/bg_view" />
+
+            <RelativeLayout
+                android:id="@+id/home_relative2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    android:id="@+id/view_green2"
+                    android:layout_width="20px"
+                    android:layout_height="60px"
+                    android:background="@color/green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35px"
+                    android:layout_toRightOf="@id/view_green2"
+                    android:text="最新一手房"
+                    android:textColor="#000"
+                    android:textSize="50px" />
+
+                <Button
+                    android:id="@+id/home_btnMoreNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30px"
+                    android:background="@null"
+                    android:text="更多" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/new_house_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

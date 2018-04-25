@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="25px"
+    android:orientation="vertical">
+<houseproperty.manyihe.com.myh_android.utils.CompatToolbar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"></houseproperty.manyihe.com.myh_android.utils.CompatToolbar>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这是第2个fragment"
+        android:textSize="25px" />
+</LinearLayout>

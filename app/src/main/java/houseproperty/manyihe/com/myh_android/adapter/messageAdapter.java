@@ -44,11 +44,11 @@ public class messageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == TYPE_HEADER) {
             View view = View.inflate(context, R.layout.message_banner_adapter, null);
-            messageAdapter.MyHeaderHolder holderH = new messageAdapter.MyHeaderHolder(view);
+            MyHeaderHolder holderH = new MyHeaderHolder(view);
             return holderH;
         } else {
             View view1 = View.inflate(context, R.layout.message_data_adapter, null);
-            messageAdapter.MyViewHolder holder = new messageAdapter.MyViewHolder(view1);
+            MyViewHolder holder = new MyViewHolder(view1);
             return holder;
         }
 
@@ -56,8 +56,8 @@ public class messageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        if (holder instanceof messageAdapter.MyHeaderHolder) {
-            messageAdapter.MyHeaderHolder viewHolder = (messageAdapter.MyHeaderHolder) holder;
+        if (holder instanceof MyHeaderHolder) {
+            MyHeaderHolder viewHolder = (MyHeaderHolder) holder;
             for (int i = 0; i < list.size(); i++) {
                 imgList.add(list.get(i).getImgUrl());
             }
@@ -66,8 +66,8 @@ public class messageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             viewHolder.banner.setBannerAnimation(Transformer.Stack);
             viewHolder.banner.start();
         }
-        if (holder instanceof messageAdapter.MyViewHolder) {
-            messageAdapter.MyViewHolder viewHolder = (messageAdapter.MyViewHolder) holder;
+        if (holder instanceof MyViewHolder) {
+            MyViewHolder viewHolder = (MyViewHolder) holder;
             viewHolder.tv.setText(list.get(position - 1).getFloorPreview());
             Uri parse = Uri.parse(list.get(position - 1).getImgUrl());
             viewHolder.img.setImageURI(parse);

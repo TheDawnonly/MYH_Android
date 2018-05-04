@@ -3,13 +3,10 @@ package houseproperty.manyihe.com.myh_android.activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
@@ -96,7 +93,7 @@ public class HotFloorDetailsActivity extends BaseActivity<HotFloorDetailsPresent
      * 获取banner数据
      */
     private void getBannerData() {
-        List<String> imgList = new ArrayList<>();
+        final List<String> imgList = new ArrayList<>();
         for (int i = 0; i < hotDetails.size(); i++) {
             split = hotDetails.get(i).getImgId().split(",");
         }
@@ -109,7 +106,7 @@ public class HotFloorDetailsActivity extends BaseActivity<HotFloorDetailsPresent
         banner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
-                Toast.makeText(HotFloorDetailsActivity.this, "点击了" + position, Toast.LENGTH_SHORT).show();
+
             }
         });
     }

@@ -7,31 +7,37 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.yarolegovich.discretescrollview.DiscreteScrollView;
+import com.yarolegovich.discretescrollview.transform.Pivot;
+import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 import com.youth.banner.Banner;
 import com.youth.banner.Transformer;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import houseproperty.manyihe.com.myh_android.R;
 import houseproperty.manyihe.com.myh_android.activity.HotFloorDetailsMoreActivity;
 import houseproperty.manyihe.com.myh_android.activity.MainActivity;
-import houseproperty.manyihe.com.myh_android.R;
 import houseproperty.manyihe.com.myh_android.activity.TwoActivity;
 import houseproperty.manyihe.com.myh_android.adapter.HotFloorAdapter;
 import houseproperty.manyihe.com.myh_android.adapter.NewHouseFloorAdapter;
+import houseproperty.manyihe.com.myh_android.adapter.SelectAgentAdapter;
 import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
 import houseproperty.manyihe.com.myh_android.bean.HousingResourceBannerBean;
+import houseproperty.manyihe.com.myh_android.bean.selectAgentBean;
 import houseproperty.manyihe.com.myh_android.presenter.HomeBannerPresenter;
 import houseproperty.manyihe.com.myh_android.presenter.HousingResourcePresenterTypeHot;
 import houseproperty.manyihe.com.myh_android.presenter.HousingResourcePresenterTypeNew;
+import houseproperty.manyihe.com.myh_android.presenter.SelectAgentPresenter;
 import houseproperty.manyihe.com.myh_android.utils.BannerImageLoader;
 import houseproperty.manyihe.com.myh_android.view.IHomeBannerView;
 import houseproperty.manyihe.com.myh_android.view.IHousingResourceViewTypeHot;
 import houseproperty.manyihe.com.myh_android.view.IHousingResourceViewTypeNew;
+import houseproperty.manyihe.com.myh_android.view.ISelectAgentView;
 
 
 /**
@@ -39,7 +45,7 @@ import houseproperty.manyihe.com.myh_android.view.IHousingResourceViewTypeNew;
  * , TextView.OnEditorActionListener
  */
 
-public class HomeFragment extends BaseFragment<HousingResourcePresenterTypeHot> implements IHousingResourceViewTypeHot, IHomeBannerView, IHousingResourceViewTypeNew {
+public class HomeFragment extends BaseFragment<HousingResourcePresenterTypeHot> implements IHousingResourceViewTypeHot, IHomeBannerView, IHousingResourceViewTypeNew, ISelectAgentView {
     private static HomeFragment instance = new HomeFragment();
     private RecyclerView hotHouseRv, newHouseRv;
     private ImageView imageView;
@@ -48,6 +54,7 @@ public class HomeFragment extends BaseFragment<HousingResourcePresenterTypeHot> 
     private TwinklingRefreshLayout refreshLayout;
     private Banner banner;
     private NewHouseFloorAdapter newHouseFloorAdapter;
+    private DiscreteScrollView discreteScrollView;
 
     public static HomeFragment newInstance() {
         return instance;
@@ -58,6 +65,7 @@ public class HomeFragment extends BaseFragment<HousingResourcePresenterTypeHot> 
     private List<HouseInfoBean.ResultBeanBean.ObjectBean.ListBean> hotList;
     private List<HouseInfoBean.ResultBeanBean.ObjectBean.ListBean> newHouseList;
     private List<HousingResourceBannerBean.ResultBeanBean.ObjectBean> bannerList;
+    private List<selectAgentBean.ResultBeanBean.ObjectBean.ListBean> agentList;
 
     @Override
     public void showResourceHotFloor(HouseInfoBean housingResource) {
@@ -107,6 +115,23 @@ public class HomeFragment extends BaseFragment<HousingResourcePresenterTypeHot> 
         newHouseRv.setAdapter(newHouseFloorAdapter);
     }
 
+    /**
+     * @param agentBean 经纪人模块
+     */
+    @Override
+    public void selectAgentShow(selectAgentBean agentBean) {
+        agentList = agentBean.getResultBean().getObject().getList();
+        //discreteScrollView.setOffscreenItems(10);
+        discreteScrollView.setItemTransformer(new ScaleTransformer.Builder()
+                .setMaxScale(1.2f)
+                .setMinScale(0.7f)
+                .setPivotX(Pivot.X.CENTER) // CENTER is a default one
+                .setPivotY(Pivot.Y.BOTTOM) // CENTER is a default one
+                .build());
+
+        discreteScrollView.setAdapter(new SelectAgentAdapter(getContext(), agentList));
+    }
+
     @Override
     public int intLayout() {
         return R.layout.homefragment;
@@ -131,7 +156,8 @@ public class HomeFragment extends BaseFragment<HousingResourcePresenterTypeHot> 
         view.findViewById(R.id.home_btnMoreNew).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mActivity, "点击了", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(getContext(), NewHouseDetailsMoreActivity.class);
+//                startActivity(intent);
             }
         });
         //最新一手房recyclerview
@@ -154,6 +180,8 @@ public class HomeFragment extends BaseFragment<HousingResourcePresenterTypeHot> 
                 Toast.makeText(mActivity, "点击了", Toast.LENGTH_SHORT).show();
             }
         });
+        //经纪人banner
+        discreteScrollView = view.findViewById(R.id.home_dis);
 
         MainActivity.MyTouchListener myTouchListener = new MainActivity.MyTouchListener() {
             @Override
@@ -190,6 +218,8 @@ public class HomeFragment extends BaseFragment<HousingResourcePresenterTypeHot> 
         homeBannerPresenter.showBanner();
         HousingResourcePresenterTypeNew housingResourcePresenterTypeNew = new HousingResourcePresenterTypeNew(this);
         housingResourcePresenterTypeNew.ShowData(pageNum, pageSize);
+        SelectAgentPresenter selectAgentPresenter = new SelectAgentPresenter(this);
+        selectAgentPresenter.showSelectAgent(pageNum, 5);
     }
 
     @Override

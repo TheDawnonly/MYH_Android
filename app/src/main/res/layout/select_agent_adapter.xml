@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10px"
+        android:orientation="horizontal">
+
+        <!--<View-->
+            <!--android:layout_width="120px"-->
+            <!--android:layout_height="match_parent" />-->
+
+        <LinearLayout
+            android:background="@mipmap/select"
+            android:layout_width="550px"
+            android:layout_height="250px"
+            android:orientation="horizontal">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/agent_sdv"
+                android:layout_width="150px"
+                android:layout_height="150px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40px"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@mipmap/ic_launcher"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20px"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/agent_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="刘某"
+                    android:textColor="#000"
+                    android:textSize="35px" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="负责项目:"
+                        android:textColor="#000"
+                        android:textSize="25px" />
+
+                    <TextView
+                        android:id="@+id/agent_project"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15px"
+                        android:text="刘某"
+                        android:textSize="25px" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/agent_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="刘某"
+                    android:textSize="25px" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25px" />
+        </LinearLayout>
+
+        <!--<View-->
+        <!--android:layout_width="150px"-->
+        <!--android:layout_height="match_parent" />-->
+
+    </LinearLayout>
+
+
+</LinearLayout>

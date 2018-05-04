@@ -7,7 +7,7 @@ import houseproperty.manyihe.com.myh_android.bean.HousingResourceHotFloorBean;
  */
 
 public interface IHotFloorDetailsM {
-    void getHotFloorDetails(callBackSuccessHotFloorDetailsBean hotFloorDetailsBean,int houseId);
+    void getHotFloorDetails(callBackSuccessHotFloorDetailsBean hotFloorDetailsBean, int houseId);
 
     interface callBackSuccessHotFloorDetailsBean {
         void HousingResourceHotFloorBean(HousingResourceHotFloorBean housingResource);

@@ -35,7 +35,7 @@ public class NewHouseFloorAdapter extends RecyclerView.Adapter<RecyclerView.View
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = View.inflate(context, R.layout.one_hot_floor, null);
-        NewHouseFloorAdapter.MyViewHolder holder = new NewHouseFloorAdapter.MyViewHolder(view);
+        MyViewHolder holder = new MyViewHolder(view);
         return holder;
 
 
@@ -43,7 +43,7 @@ public class NewHouseFloorAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        NewHouseFloorAdapter.MyViewHolder viewHolder = (NewHouseFloorAdapter.MyViewHolder) holder;
+        MyViewHolder viewHolder = (MyViewHolder) holder;
         viewHolder.title.setText(hotList.get(position).getSubTitle());
         viewHolder.price.setText(hotList.get(position).getPrice() + "万");
         viewHolder.address.setText(hotList.get(position).getAddress());

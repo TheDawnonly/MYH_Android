@@ -8,7 +8,7 @@ import houseproperty.manyihe.com.myh_android.bean.LayInfoBean;
  */
 
 public interface ILayInfoModel {
-    void getLayInfoBean(callBackSuccessLayInfoBean infoBean,int houseId);
+    void getLayInfoBean(callBackSuccessLayInfoBean infoBean, int houseId);
 
     interface callBackSuccessLayInfoBean {
         void LayInfo(LayInfoBean infoBean);

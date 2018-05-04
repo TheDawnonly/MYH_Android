@@ -37,7 +37,7 @@ public class HotFloorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = View.inflate(context, R.layout.one_hot_floor, null);
-        HotFloorAdapter.MyViewHolder holder = new HotFloorAdapter.MyViewHolder(view);
+        MyViewHolder holder = new MyViewHolder(view);
         return holder;
 
 
@@ -45,7 +45,7 @@ public class HotFloorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        HotFloorAdapter.MyViewHolder viewHolder = (HotFloorAdapter.MyViewHolder) holder;
+        MyViewHolder viewHolder = (MyViewHolder) holder;
         viewHolder.title.setText(hotList.get(position).getSubTitle());
         viewHolder.address.setText(hotList.get(position).getAddress());
         viewHolder.price.setText(hotList.get(position).getAveragePrice() + "/元m²");

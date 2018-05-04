@@ -1,9 +1,7 @@
 package houseproperty.manyihe.com.myh_android.utils;
 
 import android.app.Application;
-import android.content.Intent;
 import android.content.res.Configuration;
-import android.util.Log;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.vise.xsnow.common.ViseConfig;
@@ -11,14 +9,8 @@ import com.vise.xsnow.http.ViseHttp;
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import okhttp3.Cache;
-import okhttp3.Interceptor;
-import okhttp3.Request;
-import okhttp3.Response;
 
 /**
  * Created by Mr.周 on 2018/3/15.
@@ -34,7 +26,7 @@ public class App extends Application {
         ViseHttp.init(this);
         ViseHttp.CONFIG()
                 //配置请求主机地址
-                .baseUrl("http://192.168.0.121:8080/myh_web/")
+                .baseUrl("http://192.168.0.111:8080/myh_web/")
                 //全局读取超时时间，单位秒
                 .readTimeout(30)
                 //全局写入超时时间，单位秒

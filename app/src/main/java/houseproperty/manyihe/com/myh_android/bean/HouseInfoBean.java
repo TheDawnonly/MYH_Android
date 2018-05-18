@@ -8,6 +8,7 @@ import java.util.List;
 
 public class HouseInfoBean {
 
+
     /**
      * resultBean : {"code":"0","message":"OK","object":{"pageNum":1,"pageSize":10,"size":4,"startRow":1,"endRow":4,"total":4,"pages":1,"list":[{"id":1,"userId":null,"title":"美丽无雾霾的家","subTitle":"御道庄园","layout":"两室一厅","measure":"83.42","floor":"五层","address":"承德市围场满族蒙古族自治县御道口","downPrice":16,"averagePrice":6196,"price":51,"towards":"南北通透","imgId":"https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/YU%20DAO%20ZY/lpzsydzy%20%281%29.jpg,https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/YU%20DAO%20ZY/lpzsydzy%20%282%29.jpg,https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/YU%20DAO%20ZY/lpzsydzy%20%283%29.jpg","layImg":"2","mainImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/loupan%20%281%29.jpg","state":2,"type":0,"feature":"景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利","explains":"两室一厅一厨一卫一阳台。\n一层两户，一栋楼有三个单元，一共有5层，南北通透","createTime":1521531899000,"updateTime":null,"isVisible":0,"houseType":"普通住宅","elevator":"无电梯","equity":"70年","fitment":"毛胚","afforest":"35％","houseTimes":"2017","bannerImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/BANNER/banner%20yudaozhuangy.jpg","page":null,"baseImgList":null,"layoutImgList":null,"imgMap":null},{"id":28,"userId":18,"title":"美丽无雾霾的家","subTitle":"兴隆融创城","layout":"两室两厅","measure":"84","floor":"16层","address":"承德市兴隆县融创城","downPrice":16,"averagePrice":10000,"price":84,"towards":"南北朝向","imgId":"https://myhtest.oss-cn-beijing.aliyuncs.com/BANNER/banner%20rongchuang.jpg,https://myhtest.oss-cn-beijing.aliyuncs.com/RONG%20CHUANG/rongchuangcheng%20%283%29.jpg,https://myhtest.oss-cn-beijing.aliyuncs.com/RONG%20CHUANG/rongchuangcheng%20%282%29.jpg","layImg":"3","mainImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/BANNER/banner%20rongchuang.jpg","state":2,"type":0,"feature":"景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利","explains":"84平南北通透，通风好，采光充足，居住方便。","createTime":1522738322000,"updateTime":null,"isVisible":0,"houseType":"普通住宅","elevator":"有电梯","equity":"70年","fitment":"精装修","afforest":"50%","houseTimes":"2017","bannerImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/BANNER/banner%20rongchuang.jpg","page":null,"baseImgList":null,"layoutImgList":null,"imgMap":null},{"id":18,"userId":null,"title":"美丽无雾霾的家","subTitle":"兴隆碧桂园","layout":"三室两厅两卫","measure":"155.23","floor":"二层","address":"承德市兴隆县112国道人民医院对面","downPrice":16,"averagePrice":11006.94,"price":170,"towards":"南北通透","imgId":"https://myhtest.oss-cn-beijing.aliyuncs.com/SALES/XING%20LONG%20BGY/BIE%20SHU/xlbieshu%20%281%29.jpg,https://myhtest.oss-cn-beijing.aliyuncs.com/SALES/XING%20LONG%20BGY/BIE%20SHU/xlbieshu%20%282%29.jpg","layImg":"1","mainImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/XING%20LONG%20BGY/lpzsxlbgy%20%288%29.jpg","state":2,"type":0,"feature":"景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利","explains":"155.23平南北通透，采光充足，居住方便，厨房可容纳多人同时操作","createTime":1522055494000,"updateTime":null,"isVisible":0,"houseType":"普通住宅","elevator":"无电梯","equity":"70年","fitment":"毛胚","afforest":"35％","houseTimes":"2017","bannerImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/BANNER/banner%20bixingguiyuan.jpg","page":null,"baseImgList":null,"layoutImgList":null,"imgMap":null},{"id":15,"userId":null,"title":"美丽无雾霾的家","subTitle":"荣盛阿尔卡迪亚","layout":"三室一厅","measure":"98","floor":"二层","address":"河北省承德市兴隆县兴隆镇南土门迎宾路","downPrice":16,"averagePrice":11165,"price":109,"towards":"南北通透","imgId":"https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/ARCADIA/lpzsardy%20%281%29.jpg,https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/ARCADIA/lpzsardy%20%282%29.jpg,https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/ARCADIA/lpzsardy%20%283%29.jpg","layImg":"","mainImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/ESTATE%20SHOW/loupan%20%282%29.jpg","state":2,"type":0,"feature":"景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利","explains":"98平经济全明三局，户型紧凑实用，餐客一体，连接阳台，南北通透，采光好，通风，南向观景主卧，具有良好私密性。","createTime":1522051062000,"updateTime":null,"isVisible":0,"houseType":"普通住宅","elevator":"无电梯","equity":"70年","fitment":"毛胚","afforest":"35％","houseTimes":"2017","bannerImg":"","page":null,"baseImgList":null,"layoutImgList":null,"imgMap":null}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]},"sessionId":null}
      */
@@ -298,9 +299,9 @@ public class HouseInfoBean {
                 private String measure;
                 private String floor;
                 private String address;
-                private int downPrice;
+                private double downPrice;
                 private double averagePrice;
-                private int price;
+                private double price;
                 private String towards;
                 private String imgId;
                 private String layImg;
@@ -388,11 +389,11 @@ public class HouseInfoBean {
                     this.address = address;
                 }
 
-                public int getDownPrice() {
+                public double getDownPrice() {
                     return downPrice;
                 }
 
-                public void setDownPrice(int downPrice) {
+                public void setDownPrice(double downPrice) {
                     this.downPrice = downPrice;
                 }
 
@@ -404,11 +405,11 @@ public class HouseInfoBean {
                     this.averagePrice = averagePrice;
                 }
 
-                public int getPrice() {
+                public double getPrice() {
                     return price;
                 }
 
-                public void setPrice(int price) {
+                public void setPrice(double price) {
                     this.price = price;
                 }
 

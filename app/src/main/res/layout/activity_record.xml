@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <houseproperty.manyihe.com.myh_android.utils.CompatToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></houseproperty.manyihe.com.myh_android.utils.CompatToolbar>
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/record_back"
+                android:layout_width="100px"
+                android:layout_height="60px"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="浏览记录"
+                android:textColor="#000"
+                android:textSize="60px" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30px"
+        android:background="@drawable/bg_view" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#cccbcb" />
+
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/recode_view_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:pstsIndicatorColor="@color/green"
+        app:pstsShouldExpand="true"
+        app:pstsTabTextColor="@color/txt_selector" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#cccbcb" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/recode_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1" />
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/comm_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/view_house_comm_sdv"
+            android:layout_width="150px"
+            android:layout_height="150px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40px"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@mipmap/ic_launcher"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/view_house_comm_nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:layout_toRightOf="@id/view_house_comm_sdv"
+            android:text="爱因斯坦诺维奇凯奇"
+            android:textSize="40px" />
+
+        <TextView
+            android:id="@+id/view_house_comm_timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15px"
+            android:layout_toRightOf="@id/view_house_comm_nameTv"
+            android:paddingBottom="20px"
+            android:text="2016" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:text="回复" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/view_house_comm_contentTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comm_rv"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="就假装这个是内容" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/view_house_comm_Rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_house_comm_contentTv"></android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

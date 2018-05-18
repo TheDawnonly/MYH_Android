@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/hot_house_record_NoData"
+        android:layout_width="match_parent"
+        android:layout_height="800px">
+
+        <ImageView
+            android:id="@+id/hot_house_record_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hot_house_record_img"
+            android:layout_centerHorizontal="true"
+            android:text="暂无记录" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/hot_house_record_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            <View
+                android:id="@+id/hot_house_record_view"
+                android:layout_width="match_parent"
+                android:layout_height="30px"
+                android:layout_below="@id/hot_house_record_rv"
+                android:background="@drawable/bg_view" />
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hot_house_record_view">
+
+                <TextView
+                    android:textSize="50px"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="35px"
+                    android:text="推荐一手房"
+                    android:textColor="#000" />
+
+                <Button
+                    android:layout_marginTop="20px"
+                    android:id="@+id/btn_tab_layout_more_hot"
+                    android:layout_width="140px"
+                    android:layout_height="70px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40px"
+                    android:background="@null"
+                    android:text="更多" />
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="20px"
+                android:id="@+id/one_hot_house_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl"></android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

@@ -1,6 +1,7 @@
 package houseproperty.manyihe.com.myh_android.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
 
 import houseproperty.manyihe.com.myh_android.R;
+import houseproperty.manyihe.com.myh_android.activity.AgentDetailsActivity;
 import houseproperty.manyihe.com.myh_android.bean.selectAgentBean;
 
 
@@ -37,12 +39,21 @@ public class SelectAgentAdapter extends RecyclerView.Adapter<SelectAgentAdapter.
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         Uri uri = Uri.parse(agentList.get(position).getAgentImg());
         holder.imgAgent.setImageURI(uri);
         holder.name.setText(agentList.get(position).getName());
         holder.project.setText(agentList.get(position).getProject());
         holder.address.setText(agentList.get(position).getStore());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, AgentDetailsActivity.class);
+                intent.putExtra("agentId", agentList.get(position).getId());
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override

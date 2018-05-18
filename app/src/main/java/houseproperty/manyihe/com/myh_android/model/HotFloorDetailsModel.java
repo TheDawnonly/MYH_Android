@@ -9,6 +9,7 @@ import com.vise.xsnow.http.callback.ACallback;
 import java.util.HashMap;
 import java.util.Map;
 
+import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
 import houseproperty.manyihe.com.myh_android.bean.HousingResourceHotFloorBean;
 
 /**
@@ -17,17 +18,18 @@ import houseproperty.manyihe.com.myh_android.bean.HousingResourceHotFloorBean;
 
 public class HotFloorDetailsModel implements IHotFloorDetailsM {
     @Override
-    public void getHotFloorDetails(final callBackSuccessHotFloorDetailsBean hotFloorDetailsBean, int houseId) {
+    public void getHotFloorDetails(final callBackSuccessHotFloorDetailsBean hotFloorDetailsBean, int houseId, int userId) {
         Map<String, Integer> map = new HashMap<>();
         map.put("houseId", houseId);
+        map.put("userId", userId);
         Gson gson = new Gson();
         String hotJson = gson.toJson(map);
         ViseHttp.POST("viewHouseInfo")
                 .tag("")
                 .setJson(hotJson)
-                .request(new ACallback<HousingResourceHotFloorBean>() {
+                .request(new ACallback<HouseInfoBean>() {
                     @Override
-                    public void onSuccess(HousingResourceHotFloorBean data) {
+                    public void onSuccess(HouseInfoBean data) {
                         hotFloorDetailsBean.HousingResourceHotFloorBean(data);
                     }
 

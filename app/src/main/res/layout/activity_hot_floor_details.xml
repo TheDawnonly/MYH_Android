@@ -1,62 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:background="@color/white">
 
-    <!--<houseproperty.manyihe.com.myh_android.utils.CompatToolbar-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"></houseproperty.manyihe.com.myh_android.utils.CompatToolbar>-->
-
-    <!--<RelativeLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content">-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/hot_floor_details_back"-->
-    <!--android:layout_width="100px"-->
-    <!--android:layout_height="50px"-->
-    <!--android:layout_marginLeft="25px"-->
-    <!--android:src="@mipmap/back" />-->
-
-    <!--<ImageView-->
-    <!--android:layout_width="100px"-->
-    <!--android:layout_height="50px"-->
-    <!--android:layout_alignParentRight="true"-->
-    <!--android:layout_marginRight="35px"-->
-    <!--android:src="@mipmap/enter" />-->
-    <!--</RelativeLayout>-->
 
     <android.support.v4.widget.NestedScrollView
-        android:layout_marginTop="-40px"
+        android:id="@+id/hot_floor_details_sv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="-100px">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/hot_floor_details_back"
-                android:layout_width="100px"
-                android:layout_height="50px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="25px"
-                android:layout_marginTop="105px"
+                android:layout_marginTop="205px"
                 android:src="@mipmap/back" />
 
-            <com.youth.banner.Banner
-                android:id="@+id/hot_floor_details_banner"
+            <ImageView
+                android:id="@+id/hot_floor_details_img"
                 android:layout_width="match_parent"
-                android:layout_height="800px"
-                android:layout_marginTop="35px"></com.youth.banner.Banner>
+                android:layout_height="wrap_content" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/hot_floor_details_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/hot_floor_details_banner"
+                android:layout_below="@id/hot_floor_details_img"
                 android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
 
             <android.support.v7.widget.RecyclerView
@@ -65,8 +42,148 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/hot_floor_details_rv"
                 android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/ll_Agent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hot_floor_details_lay_info"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15px"
+                    android:background="@drawable/bg_view" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/agent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginTop="35px"
+                        android:text="推荐经纪人"
+                        android:textColor="#000"
+                        android:textSize="50px"
+                        android:textStyle="bold" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20px"
+                        android:layout_marginTop="55px"
+                        android:layout_toRightOf="@id/agent"
+                        android:text="您可以通过电话联系经纪人" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30px"
+                        android:layout_marginTop="30px"
+                        android:background="@null"
+                        android:text="更多" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@drawable/bg_view" />
+
+                <com.yarolegovich.discretescrollview.DiscreteScrollView
+                    android:id="@+id/hot_floor_floor_detail_dis"
+                    android:layout_width="match_parent"
+                    android:layout_height="350px"
+                    android:layout_marginTop="45px"
+                    app:dsv_orientation="horizontal"></com.yarolegovich.discretescrollview.DiscreteScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_Agent"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15px"
+                    android:layout_marginTop="20px"
+                    android:background="@drawable/bg_view" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:background="@null"
+                        android:text="用户点评"
+                        android:textColor="#000"
+                        android:textSize="50px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="50px"
+                        android:text="写点评" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="30px"
+                    android:background="#eee" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ViewHouseComm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25px"></android.support.v7.widget.RecyclerView>
+
+                <Button
+                    android:layout_width="800px"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30px"
+                    android:text="查看更多点评" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="200px" />
+            </LinearLayout>
+
+
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:drawableLeft="@mipmap/ic_launcher"
+            android:gravity="center_vertical"
+            android:text="收藏" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="免费咨询经纪人" />
+    </LinearLayout>
+
+
+</RelativeLayout>

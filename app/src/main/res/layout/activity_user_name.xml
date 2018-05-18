@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    android:orientation="vertical"
+    tools:context=".activity.UserNameActivity">
+
+    <houseproperty.manyihe.com.myh_android.utils.CompatToolbar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></houseproperty.manyihe.com.myh_android.utils.CompatToolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/user_name_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="取消" />
+
+        <Button
+            android:id="@+id/user_name_sure_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:background="@null"
+            android:text="确定"
+            android:textColor="#c7d9c1" />
+
+        <Button
+            android:id="@+id/user_name_sure_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30px"
+            android:background="#66cc00"
+            android:text="确定"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/user_name_et"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:background="@drawable/bg_edittext"
+        android:maxLines="16"
+        android:paddingLeft="25px"
+        android:singleLine="true" />
+</LinearLayout>

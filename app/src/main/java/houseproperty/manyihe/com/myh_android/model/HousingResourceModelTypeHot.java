@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
+import retrofit2.Retrofit;
 
 /**
  * Created by Mr.周 on 2018/3/14.
@@ -20,6 +21,7 @@ public class HousingResourceModelTypeHot implements IModelHousingResource {
 
     @Override
     public void getHotFloor(final callBackSuccessFloorBean floorBean, int pageNum, int pageSize) {
+
         Map<String, Integer> hotM = new HashMap<String, Integer>();
         hotM.put("pageNum", pageNum);
         hotM.put("pageSize", pageSize);

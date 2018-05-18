@@ -8,6 +8,7 @@
 
     <com.heima.tabview.library.TabView
         android:id="@+id/tabView"
+        app:tab_textViewSelColor="#66cc00"
         app:tab_tabViewBackgroundColor="#eeee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

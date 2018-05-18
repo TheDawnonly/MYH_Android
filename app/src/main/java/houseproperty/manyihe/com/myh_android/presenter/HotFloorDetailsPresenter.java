@@ -2,6 +2,7 @@ package houseproperty.manyihe.com.myh_android.presenter;
 
 import java.lang.ref.WeakReference;
 
+import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
 import houseproperty.manyihe.com.myh_android.bean.HousingResourceBannerBean;
 import houseproperty.manyihe.com.myh_android.bean.HousingResourceHotFloorBean;
 import houseproperty.manyihe.com.myh_android.model.HomeBannerModel;
@@ -13,7 +14,6 @@ import houseproperty.manyihe.com.myh_android.view.IHotFloorDetailsView;
 
 /**
  * Created by Mr.周 on 2018/4/18.
- * 首页banner轮播图
  */
 
 public class HotFloorDetailsPresenter implements IPresenter<IHotFloorDetailsView> {
@@ -35,12 +35,12 @@ public class HotFloorDetailsPresenter implements IPresenter<IHotFloorDetailsView
         mRefView.clear();
     }
 
-    public void showHotFloorDetails(int id) {
+    public void showHotFloorDetails(int id, int userId) {
         iHotFloorDetailsM.getHotFloorDetails(new IHotFloorDetailsM.callBackSuccessHotFloorDetailsBean() {
             @Override
-            public void HousingResourceHotFloorBean(HousingResourceHotFloorBean housingResource) {
+            public void HousingResourceHotFloorBean(HouseInfoBean housingResource) {
                 mRefView.get().getHotFloorShow(housingResource);
             }
-        }, id);
+        }, id,userId);
     }
 }

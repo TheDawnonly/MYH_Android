@@ -1,11 +1,15 @@
 package houseproperty.manyihe.com.myh_android.activity;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -41,6 +45,23 @@ public class MainActivity extends AppCompatActivity {
     private long exitTime = 0;
     public static final int REFRESH = 0;
     private LinearLayout layout;
+    final public static int REQUEST_CODE_ASK_CALL_PHONE = 123;
+
+    //动态权限申请后处理
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//        switch (requestCode) {
+//            case REQUEST_CODE_ASK_CALL_PHONE:
+//                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    // Permission Granted callDirectly(mobile);
+//                } else {
+//                    // Permission Denied Toast.makeText(MainActivity.this,"CALL_PHONE Denied", Toast.LENGTH_SHORT) .show();
+//                }
+//                break;
+//            default:
+//                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +84,16 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         MIUISetStatusBarLightMode(this, true);
         FlymeSetStatusBarLightMode(getWindow(), true);
-
+//        if (Build.VERSION.SDK_INT >= 23) {
+//            int checkCallPhonePermission = ContextCompat.checkSelfPermission(this,
+//                    Manifest.permission.CALL_PHONE);
+//            if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
+//                ActivityCompat.requestPermissions(this, new String[]{
+//                        Manifest.permission.CALL_PHONE
+//                }, REQUEST_CODE_ASK_CALL_PHONE);
+//                return;
+//            }
+//        }
 
         tabView = (TabView) findViewById(R.id.tabView);
         layout = findViewById(R.id.main_ll);

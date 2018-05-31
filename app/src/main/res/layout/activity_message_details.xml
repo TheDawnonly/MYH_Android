@@ -8,8 +8,12 @@
     android:orientation="vertical"
     tools:context="houseproperty.manyihe.com.myh_android.activity.MessageDetailsActivity">
 
-    <TextView
-        android:id="@+id/message_details_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <houseproperty.manyihe.com.myh_android.utils.CompatToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></houseproperty.manyihe.com.myh_android.utils.CompatToolbar>
+
+    <WebView
+        android:id="@+id/message_web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
 </LinearLayout>

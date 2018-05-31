@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.sdsmdg.tastytoast.TastyToast;
 
@@ -40,7 +41,7 @@ public class UserNameActivity extends BaseActivity<UpDataUserInfoPresenter> impl
         sp = getSharedPreferences("config", MODE_PRIVATE);
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.showSoftInput(userNameEt, 0);
-        showSoftInputFromWindow(this,userNameEt);
+        showSoftInputFromWindow(this, userNameEt);
     }
 
     /**
@@ -70,7 +71,6 @@ public class UserNameActivity extends BaseActivity<UpDataUserInfoPresenter> impl
         userNameCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserNameActivity.this, selectUserActivity.class));
                 finish();
             }
         });
@@ -82,16 +82,15 @@ public class UserNameActivity extends BaseActivity<UpDataUserInfoPresenter> impl
                 int id = sp.getInt("id", 0);
                 if (name != null && !name.equals("")) {
                     presenter.showUpUserInfo(id, null, name, null);
-                    startActivity(new Intent(UserNameActivity.this, UserNewActivity.class));
-                    finish();
                 } else {
-                    TastyToast.makeText(UserNameActivity.this, "输入不能为空哦喵", TastyToast.LENGTH_SHORT, TastyToast.DEFAULT);
+                    TastyToast.makeText(UserNameActivity.this, "输入不能为空", TastyToast.LENGTH_SHORT, TastyToast.DEFAULT);
                     return;
                 }
 
             }
         });
     }
+
     /**
      * EditText获取焦点并显示软键盘
      */
@@ -101,6 +100,7 @@ public class UserNameActivity extends BaseActivity<UpDataUserInfoPresenter> impl
         editText.requestFocus();
         activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
     }
+
     @Override
     public void createPresenter() {
         presenter = new UpDataUserInfoPresenter(this);
@@ -115,6 +115,12 @@ public class UserNameActivity extends BaseActivity<UpDataUserInfoPresenter> impl
 
     @Override
     public void getupUser(UpDataUserInfoBean dataUserInfoBean) {
+        if (dataUserInfoBean.getResultBean().getCode().equals("0")) {
+            finish();
+        }else{
+            TastyToast.makeText(this, dataUserInfoBean.getResultBean().getMessage(), TastyToast.LENGTH_SHORT,TastyToast.WARNING).show();
+        }
+
 
     }
 }

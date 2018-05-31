@@ -56,6 +56,7 @@ public class HotFloorDetailsActivityAdapter_LayInfo extends RecyclerView.Adapter
             holder.layout_tv.setText(layList.get(position).getLayout());
             holder.avgPrice_tv.setText(layList.get(position).getAvgPrice() + "万/套");
             holder.typeTv.bringToFront();
+            holder.typeTv.setText(layList.get(position).getLayType() + "户型");
             holder.towardsTv.setText(layList.get(position).getTowards());
             holder.measureTv.setText(layList.get(position).getMeasure() + "m²");
             String feature = layList.get(position).getFeature();
@@ -79,7 +80,7 @@ public class HotFloorDetailsActivityAdapter_LayInfo extends RecyclerView.Adapter
                 holder.onSale.setVisibility(View.GONE);
                 holder.sellOut.setVisibility(View.VISIBLE);
             }
-
+            holder.timeTv.setText(layList.get(position).getTimeStr());
         }
 
     }
@@ -90,7 +91,7 @@ public class HotFloorDetailsActivityAdapter_LayInfo extends RecyclerView.Adapter
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView layout_tv, avgPrice_tv, typeTv, towardsTv, measureTv, feature1, feature2, feature3;
+        TextView layout_tv, avgPrice_tv, typeTv, towardsTv, measureTv, feature1, feature2, feature3, timeTv;
         Button onSale, sellOut;
         SimpleDraweeView simpleDraweeView;
 
@@ -107,6 +108,7 @@ public class HotFloorDetailsActivityAdapter_LayInfo extends RecyclerView.Adapter
             feature1 = itemView.findViewById(R.id.hot_floor_details_adapter_lay_info_feature1);
             feature2 = itemView.findViewById(R.id.hot_floor_details_adapter_lay_info_feature2);
             feature3 = itemView.findViewById(R.id.hot_floor_details_adapter_lay_info_feature3);
+            timeTv = itemView.findViewById(R.id.hot_floor_details_adapter_lay_info_time);
         }
     }
 }

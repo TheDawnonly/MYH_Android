@@ -28,22 +28,30 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:textSize="@dimen/content40"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30px"
                 android:layout_toRightOf="@id/hot_floor_details_adapter_title"
                 android:background="@drawable/bg_hot_floor_details0"
-                android:padding="10px"
+                android:paddingLeft="20px"
+                android:paddingRight="20px"
+                android:paddingTop="5px"
+                android:paddingBottom="5px"
                 android:text="住宅"
                 android:textColor="#a9a9a9" />
 
             <TextView
+                android:textSize="@dimen/content40"
                 android:id="@+id/hot_floor_details_adapter_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30px"
                 android:background="@drawable/bg_hot_floor_details0"
-                android:padding="10px"
+                android:paddingLeft="20px"
+                android:paddingRight="20px"
+                android:paddingTop="5px"
+                android:paddingBottom="5px"
                 android:text="期房在售"
                 android:textColor="#a9a9a9" />
         </LinearLayout>
@@ -55,16 +63,21 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textSize="@dimen/content40"
                 android:id="@+id/feature1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_hot_floor_details1"
                 android:gravity="center_horizontal"
-                android:padding="5px"
+                android:paddingLeft="20px"
+                android:paddingRight="20px"
+                android:paddingTop="5px"
+                android:paddingBottom="5px"
                 android:text="五证齐全"
                 android:textColor="#81d54c" />
 
             <TextView
+                android:textSize="@dimen/content40"
                 android:id="@+id/feature2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,11 +85,15 @@
                 android:background="@drawable/bg_hot_floor_details2"
                 android:gravity="center_horizontal"
                 android:lines="1"
-                android:padding="5px"
+                android:paddingLeft="20px"
+                android:paddingRight="20px"
+                android:paddingTop="5px"
+                android:paddingBottom="5px"
                 android:text="车位充足"
                 android:textColor="#0198ff" />
 
             <TextView
+                android:textSize="@dimen/content40"
                 android:id="@+id/feature3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +101,10 @@
                 android:background="@drawable/bg_hot_floor_details3"
                 android:gravity="center_horizontal"
                 android:lines="1"
-                android:padding="5px"
+                android:paddingLeft="20px"
+                android:paddingRight="20px"
+                android:paddingTop="5px"
+                android:paddingBottom="5px"
                 android:text="万科认证"
                 android:textColor="#ffa330" />
         </LinearLayout>
@@ -102,6 +122,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textSize="@dimen/content48"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="住宅:"
@@ -109,19 +130,20 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:textSize="@dimen/content40"
                 android:id="@+id/hot_floor_details_adapter_average_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10px"
                 android:text="91000元/m²"
-                android:textColor="@color/Orange" />
+                android:textColor="#ff2300" />
 
             <TextView
+                android:textSize="@dimen/content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15px"
-                android:text="23小时前更新"
-                android:textSize="20px" />
+                android:text="23小时前更新" />
         </LinearLayout>
 
         <LinearLayout
@@ -131,6 +153,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textSize="@dimen/content48"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="户型面积:"
@@ -138,6 +161,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:textSize="@dimen/content40"
                 android:id="@+id/hot_floor_details_adapter_measure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -161,6 +185,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textSize="@dimen/content48"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="地址:"
@@ -168,6 +193,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:textSize="@dimen/content40"
                 android:id="@+id/hot_floor_details_adapter_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -208,7 +234,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#fff6ef"
+            android:background="#fff6f0"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -229,11 +255,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="优惠房价" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_average_price_two"
                             android:layout_width="320px"
                             android:layout_height="wrap_content"
@@ -248,11 +276,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="电梯情况" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_elevator"
                             android:layout_width="320px"
                             android:layout_height="wrap_content"
@@ -267,11 +297,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="房屋类型" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_house_type"
                             android:layout_width="320px"
                             android:layout_height="wrap_content"
@@ -286,11 +318,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="面积" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_measure_two"
                             android:layout_width="320px"
                             android:layout_height="wrap_content"
@@ -305,11 +339,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="绿化率" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_afforest"
                             android:layout_width="320px"
                             android:layout_height="wrap_content"
@@ -324,11 +360,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="产权" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_equity"
                             android:layout_width="320px"
                             android:layout_height="wrap_content"
@@ -353,11 +391,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="楼层" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_floor"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -372,11 +412,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="朝向" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_towards"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -391,11 +433,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="户型" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -410,11 +454,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="工程进度" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_state_two"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -429,11 +475,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="装修情况" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_fitment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -448,11 +496,13 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:layout_width="230px"
                             android:layout_height="wrap_content"
                             android:text="建筑年代" />
 
                         <TextView
+                            android:textSize="@dimen/content40"
                             android:id="@+id/hot_floor_details_adapter_house_times"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

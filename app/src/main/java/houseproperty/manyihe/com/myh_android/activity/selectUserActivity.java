@@ -30,7 +30,8 @@ public class selectUserActivity extends BaseActivity<UserInfoShowPresenter> impl
     private static final int TAKE_PHOTO_REQUEST_THREE = 555;
 
     private Uri imageUri;
-    private TextView getName, getMobile;
+    private TextView getName, getMobile, getEmailTv;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,19 +43,37 @@ public class selectUserActivity extends BaseActivity<UserInfoShowPresenter> impl
         onClick();
     }
 
+
     @Override
     public void createPresenter() {
         presenter = new UserInfoShowPresenter(this);
         SharedPreferences sp;
         sp = getSharedPreferences("config", MODE_PRIVATE);
-        int id = sp.getInt("id", 0);
+        id = sp.getInt("id", 0);
+        presenter.showUserInfoShow(id);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         presenter.showUserInfoShow(id);
     }
 
     @Override
     public void getUserInfoShow(UserInfoShowBean infoShowBean) {
-        getName.setText(infoShowBean.getResultBean().getObject().getName());
-        getMobile.setText(infoShowBean.getResultBean().getObject().getMobile());
+        if (infoShowBean.getResultBean().getObject() != null) {
+            if (infoShowBean.getResultBean().getObject().getName() != null) {
+                getName.setText(infoShowBean.getResultBean().getObject().getName());
+            }
+            if (infoShowBean.getResultBean().getObject().getMobile() != null) {
+                getMobile.setText(infoShowBean.getResultBean().getObject().getMobile());
+            }
+            if (infoShowBean.getResultBean().getObject().getEmail() != null) {
+                getEmailTv.setText(infoShowBean.getResultBean().getObject().getEmail());
+            }
+        }
+
+
     }
 
     /**
@@ -71,7 +90,6 @@ public class selectUserActivity extends BaseActivity<UserInfoShowPresenter> impl
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(selectUserActivity.this, UserNameActivity.class));
-                finish();
             }
         });
         headEmail.setOnClickListener(new View.OnClickListener() {
@@ -83,19 +101,19 @@ public class selectUserActivity extends BaseActivity<UserInfoShowPresenter> impl
         headPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TastyToast.makeText(selectUserActivity.this, "点击了", TastyToast.LENGTH_SHORT, TastyToast.SUCCESS);
+                startActivity(new Intent(selectUserActivity.this, FindPassWordActivity.class));
             }
         });
         headRlBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                pickImageFromAlbum2();
             }
         });
         headNameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(selectUserActivity.this, UserNameActivity.class));
             }
         });
         headEmailBtn.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +150,7 @@ public class selectUserActivity extends BaseActivity<UserInfoShowPresenter> impl
         headPasswordBtn = (Button) findViewById(R.id.head_password_btn);
         getName = findViewById(R.id.get_name);
         getMobile = findViewById(R.id.get_mobile);
+        getEmailTv = findViewById(R.id.getEmail);
         findViewById(R.id.select_user_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,6 +211,5 @@ public class selectUserActivity extends BaseActivity<UserInfoShowPresenter> impl
 
     public static void delteImageUri(Context context, Uri uri) {
         context.getContentResolver().delete(uri, null, null);
-
     }
 }

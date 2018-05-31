@@ -121,7 +121,7 @@ public class HousingResourceBannerBean {
             private Object layImg;
             private Object mainImg;
             private Object state;
-            private Object type;
+            private int type;
             private Object feature;
             private Object explains;
             private Object createTime;
@@ -267,11 +267,11 @@ public class HousingResourceBannerBean {
                 this.state = state;
             }
 
-            public Object getType() {
+            public int getType() {
                 return type;
             }
 
-            public void setType(Object type) {
+            public void setType(int type) {
                 this.type = type;
             }
 

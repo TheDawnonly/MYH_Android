@@ -25,18 +25,18 @@ public class App extends Application {
         Fresco.initialize(this);
         ViseHttp.init(this);
         ViseHttp.CONFIG()
-                //配置请求主机地址
-                .baseUrl("http://192.168.0.111:8080/myh_web/")
+                //配置请求主机地址www.manyihefc.com  192.168.0.111:8080
+                .baseUrl("http://www.manyihefc.com:8080/myh_web/")
                 //全局读取超时时间，单位秒
-                .readTimeout(30)
+                .readTimeout(6)
                 //全局写入超时时间，单位秒
                 .writeTimeout(30)
                 //全局连接超时时间，单位秒
-                .connectTimeout(30)
+                .connectTimeout(6)
                 //全局请求失败重试次数
                 .retryCount(30)
                 //全局请求失败重试间隔时间，单位毫秒
-                .retryDelayMillis(1000)
+                .retryDelayMillis(2000)
                 //配置是否使用OkHttp的默认缓存
                 .setHttpCache(true)
                 //配置OkHttp缓存路径

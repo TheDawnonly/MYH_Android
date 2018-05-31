@@ -3,6 +3,9 @@ package houseproperty.manyihe.com.myh_android.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,20 +14,31 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.yatoooon.screenadaptation.ScreenAdapterTools;
 
+import java.util.List;
+
 import houseproperty.manyihe.com.myh_android.R;
+import houseproperty.manyihe.com.myh_android.adapter.SelectAgentMoreAdapter;
+import houseproperty.manyihe.com.myh_android.adapter.TwoActivityLikeMyHouseAdapter;
+import houseproperty.manyihe.com.myh_android.bean.LikeMyhHouseBean;
 import houseproperty.manyihe.com.myh_android.bean.MessageBean;
+import houseproperty.manyihe.com.myh_android.presenter.LikeMyHousePresenter;
 import houseproperty.manyihe.com.myh_android.presenter.MessagePresenter;
+import houseproperty.manyihe.com.myh_android.view.ILikeMyHouseView;
 import houseproperty.manyihe.com.myh_android.view.IMessageView;
 
 
-public class TwoActivity extends BaseActivity<MessagePresenter> implements IMessageView, TextView.OnEditorActionListener {
+public class TwoActivity extends BaseActivity<LikeMyHousePresenter> implements ILikeMyHouseView, TextView.OnEditorActionListener {
 
     private EditText editText;
-    private TextView textView;
+    private TextView textView, noTv;
+    private int pageNum = 1, pageSize = 10;
+    private RelativeLayout layout;
+    private RecyclerView rv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +46,12 @@ public class TwoActivity extends BaseActivity<MessagePresenter> implements IMess
         //getSupportActionBar().hide();
         setContentView(R.layout.activity_two);
         //屏幕适配
-        ScreenAdapterTools.getInstance().loadView((ViewGroup) getWindow().getDecorView());
+        //ScreenAdapterTools.getInstance().loadView((ViewGroup) getWindow().getDecorView());
         editText = findViewById(R.id.mEt);
         textView = findViewById(R.id.act_two_tv);
-        editText.setOnEditorActionListener(this);
-        showSoftInputFromWindow(this, editText);
+        layout = findViewById(R.id.two_Rl);
+        noTv = findViewById(R.id.two_noTv);
+        rv = findViewById(R.id.two_activityRv);
         //状态栏透明加黑色字体
         MainActivity.FlymeSetStatusBarLightMode(getWindow(), true);
         MainActivity.MIUISetStatusBarLightMode(this, true);
@@ -46,27 +61,52 @@ public class TwoActivity extends BaseActivity<MessagePresenter> implements IMess
                 finish();
             }
         });
-//        Gson gson = new Gson();
-//        Map<String, Integer> hotM = new HashMap<>();
-//        hotM.put("pageNum", 1);
-//        hotM.put("pageSize", 10);
-//        hotM.put("type", 1);
-//        String hotJson = gson.toJson(hotM);
-//        ViseHttp.POST("viewHouseInfo")
-//                .tag("12131313")
-//                .setJson(hotJson)
-//                .request(new ACallback<HousingResourceHotFloorBean>() {
-//                    @Override
-//                    public void onSuccess(HousingResourceHotFloorBean data) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onFail(int errCode, String errMsg) {
-//                        Log.d("TwoActivity", "======"+errCode);
-//                        Log.d("TwoActivity", "======"+errMsg);
-//                    }
-//                });
+
+        //输入内容后搜索
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    //showSoftInputFromWindow(TwoActivity.this, editText);
+                    View view = getCurrentFocus();
+                    String s = editText.getText().toString().trim();
+                    if (s != null) {
+                        presenter.showLikeMyHousePresenter(s, pageNum, pageSize);
+                        View view1 = getCurrentFocus();
+                        hideInputMethod(TwoActivity.this, view1);
+                    }
+                }
+
+                return false;
+            }
+        });
+    }
+
+    /**
+     * 搜索结果
+     *
+     * @param myhHouseBean
+     */
+    @Override
+    public void showLikeMyHouseView(LikeMyhHouseBean myhHouseBean) {
+        if (myhHouseBean.getResultBean().getCode().equals("0")) {
+            List<LikeMyhHouseBean.ResultBeanBean.ObjectBean.ListBean> list = myhHouseBean.getResultBean().getObject().getList();
+            layout.setVisibility(View.GONE);
+            TwoActivityLikeMyHouseAdapter adapter = new TwoActivityLikeMyHouseAdapter(TwoActivity.this, list);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+            //设置启用平滑滚动条
+            layoutManager.setSmoothScrollbarEnabled(true);
+            //设置自自动测量功能
+            layoutManager.setAutoMeasureEnabled(true);
+            rv.setLayoutManager(layoutManager);
+            //具有固定大小
+            rv.setHasFixedSize(true);
+            rv.setNestedScrollingEnabled(false);
+            rv.setAdapter(adapter);
+        } else {
+            layout.setVisibility(View.VISIBLE);
+            noTv.setText(myhHouseBean.getResultBean().getMessage());
+        }
     }
 
     /**
@@ -81,7 +121,7 @@ public class TwoActivity extends BaseActivity<MessagePresenter> implements IMess
 
     @Override
     public void createPresenter() {
-
+        presenter = new LikeMyHousePresenter(this);
     }
 
 
@@ -140,13 +180,4 @@ public class TwoActivity extends BaseActivity<MessagePresenter> implements IMess
         return super.dispatchTouchEvent(ev);
     }
 
-    @Override
-    public void showData(MessageBean MessageBean) {
-
-    }
-
-    @Override
-    public void failMsg(String msg) {
-
-    }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -13,7 +14,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.List;
 
 import houseproperty.manyihe.com.myh_android.R;
-import houseproperty.manyihe.com.myh_android.activity.HotFloorDetailsActivity;
 import houseproperty.manyihe.com.myh_android.activity.NewHouseFloorDetailsActivity;
 import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
 
@@ -23,18 +23,18 @@ import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
 
 public class NewHouseFloorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
-    private List<HouseInfoBean.ResultBeanBean.ObjectBean.ListBean> hotList;
+    private List<HouseInfoBean.ResultBeanBean.ObjectBean.ListBean> newList;
 
 
-    public NewHouseFloorAdapter(Context context, List<HouseInfoBean.ResultBeanBean.ObjectBean.ListBean> hotList) {
+    public NewHouseFloorAdapter(Context context, List<HouseInfoBean.ResultBeanBean.ObjectBean.ListBean> newList) {
         this.context = context;
-        this.hotList = hotList;
+        this.newList = newList;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = View.inflate(context, R.layout.one_hot_floor, null);
+        View view = View.inflate(context, R.layout.new_house_floor, null);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
 
@@ -43,43 +43,54 @@ public class NewHouseFloorAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        MyViewHolder viewHolder = (MyViewHolder) holder;
-        viewHolder.title.setText(hotList.get(position).getSubTitle());
-        viewHolder.price.setText(hotList.get(position).getPrice() + "万");
-        viewHolder.address.setText(hotList.get(position).getAddress());
-        viewHolder.measure.setText(hotList.get(position).getMeasure() + "平方米");
-        viewHolder.equity.setText(hotList.get(position).getEquity());
-        Uri parse = Uri.parse(hotList.get(position).getMainImg());
-        viewHolder.imageView.setImageURI(parse);
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, NewHouseFloorDetailsActivity.class);
-                intent.putExtra("houseId", hotList.get(position).getId());
-                context.startActivity(intent);
+        if (newList != null) {
+            MyViewHolder viewHolder = (MyViewHolder) holder;
+            viewHolder.titleTv.setText(newList.get(position).getSubTitle());
+            viewHolder.priceTv.setText(newList.get(position).getPrice() + "万");
+            viewHolder.addressTv.setText(newList.get(position).getAddress());
+            viewHolder.measureTv.setText(newList.get(position).getMeasure() + "平方米");
+            if (newList.get(position).getMainImg() != null) {
+                Uri parse = Uri.parse(newList.get(position).getMainImg());
+                viewHolder.imageView.setImageURI(parse);
             }
-        });
+
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, NewHouseFloorDetailsActivity.class);
+                    intent.putExtra("houseId", newList.get(position).getId());
+                    context.startActivity(intent);
+                }
+            });
+            String feature = newList.get(position).getFeature();
+            String[] temp = null;
+            temp = feature.split(",");
+            viewHolder.feature1Tv.setText(temp[0]);
+            viewHolder.feature2Tv.setText(temp[1]);
+        }
+
     }
 
     @Override
     public int getItemCount() {
-        return hotList == null ? 0 : hotList.size();
+        return newList == null ? 0 : newList.size();
     }
 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView title, address, price, measure, equity;
+        TextView titleTv, addressTv, priceTv, measureTv,feature1Tv,feature2Tv;
         SimpleDraweeView imageView;
 
         //该够造方法接受的itemView参数 就是item布局的view对象
         public MyViewHolder(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.hot_tv_title);
-            address = itemView.findViewById(R.id.hot_tv_address);
-            imageView = itemView.findViewById(R.id.hot_sdv);
-            price = itemView.findViewById(R.id.hot_tv_average_price);
-            measure = itemView.findViewById(R.id.hot_tv_measure);
-            equity = itemView.findViewById(R.id.hot_tv_equity);
+            titleTv = itemView.findViewById(R.id.new_tv_title);
+            addressTv = itemView.findViewById(R.id.new_tv_address);
+            imageView = itemView.findViewById(R.id.new_sdv);
+            priceTv = itemView.findViewById(R.id.new_tv_price);
+            measureTv = itemView.findViewById(R.id.new_house_measureTv);
+            feature1Tv = itemView.findViewById(R.id.new_house_feature1Tv);
+            feature2Tv = itemView.findViewById(R.id.new_house_feature2Tv);
         }
     }
 }

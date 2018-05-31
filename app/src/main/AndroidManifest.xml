@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="houseproperty.manyihe.com.myh_android">
+    package="houseproperty.manyihe.com.myh_android"
+    android:versionCode="1"
+    android:versionName="1.0">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".utils.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon120"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -27,6 +30,7 @@
         <activity android:name=".activity.MessageDetailsActivity" />
         <activity android:name=".activity.HotFloorDetailsActivity" />
         <activity android:name=".activity.NewHouseFloorDetailsActivity" />
+
         <meta-data
             android:name="designwidth"
             android:value="1080" />
@@ -43,7 +47,7 @@
             android:name="unit"
             android:value="px" />
         //你的布局里面用的是px这就写px,你的布局里面用的是dp这就写dp,要统一
-        <activity android:name=".activity.HotFloorDetailsMoreActivity" />
+        <activity android:name=".activity.HotFloorMoreActivity" />
         <activity android:name=".activity.NewHouseMoreActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegisterActivity" />
@@ -54,7 +58,11 @@
         <activity android:name=".activity.UserNewActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.AgentDetailsActivity" />
-        <activity android:name=".activity.ImgClickActivity" ></activity>
+        <activity android:name=".activity.ImgClickActivity" />
+        <activity android:name=".activity.AgentMoreActivity" />
+        <activity android:name=".activity.AgentLoginActivity" />
+        <activity android:name=".activity.ManagementActivity" />
+        <activity android:name=".activity.WriteCommentActivity"></activity>
     </application>
 
 </manifest>

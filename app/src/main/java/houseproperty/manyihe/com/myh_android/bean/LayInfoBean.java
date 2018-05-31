@@ -8,8 +8,9 @@ import java.util.List;
 
 public class LayInfoBean {
 
+
     /**
-     * resultBean : {"code":"0","message":"OK","object":[{"id":1,"houseId":1,"imgA":"https://myhtest.oss-cn-beijing.aliyuncs.com/image2.jpg","imgB":null,"layout":"三室两厅两卫","measure":"99.8","towards":"南北通透","saleState":"2","avgPrice":"500","explains":"描述介绍啊手动阀手动阀手动阀手动阀阿斯顿发射点发射点发生","feature":"带阳台,全明格局"},{"id":2,"houseId":1,"imgA":"https://myhtest.oss-cn-beijing.aliyuncs.com/image2.jpg","imgB":null,"layout":"三室两厅两卫","measure":"91.3","towards":"南北通透","saleState":"2","avgPrice":"300","explains":"发的规划风格化法国生","feature":"带阳台,全明格局"}],"sessionId":null}
+     * resultBean : {"code":"0","message":"OK","object":[{"id":5,"houseId":1,"imgA":"https://myhtest.oss-cn-beijing.aliyuncs.com/SALES/YU%20DAO%20ZY/ydzy%20%281%29.jpg","imgB":null,"layout":"两室一厅一卫","measure":"83.42","towards":"南北通透","saleState":"2","avgPrice":"516","explains":"两室一厅一厨一卫一阳台。\n一层两户，一栋楼有三个单元，一共有5层，南北通透","feature":"景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利","layType":"A","timeStr":"2018-05-16"},{"id":6,"houseId":1,"imgA":"https://myhtest.oss-cn-beijing.aliyuncs.com/SALES/YU%20DAO%20ZY/ydzy%20%282%29.jpg","imgB":null,"layout":"一室一厅一卫一厨","measure":"42","towards":"南北通透","saleState":"2","avgPrice":"507","explains":"一室一厅一厨一卫一阳台。\n一层两户，一栋楼有三个单元，一共有5层，南北通透","feature":"景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利","layType":"A","timeStr":"2018-05-16"}],"sessionId":null}
      */
 
     private ResultBeanBean resultBean;
@@ -26,7 +27,7 @@ public class LayInfoBean {
         /**
          * code : 0
          * message : OK
-         * object : [{"id":1,"houseId":1,"imgA":"https://myhtest.oss-cn-beijing.aliyuncs.com/image2.jpg","imgB":null,"layout":"三室两厅两卫","measure":"99.8","towards":"南北通透","saleState":"2","avgPrice":"500","explains":"描述介绍啊手动阀手动阀手动阀手动阀阿斯顿发射点发射点发生","feature":"带阳台,全明格局"},{"id":2,"houseId":1,"imgA":"https://myhtest.oss-cn-beijing.aliyuncs.com/image2.jpg","imgB":null,"layout":"三室两厅两卫","measure":"91.3","towards":"南北通透","saleState":"2","avgPrice":"300","explains":"发的规划风格化法国生","feature":"带阳台,全明格局"}]
+         * object : [{"id":5,"houseId":1,"imgA":"https://myhtest.oss-cn-beijing.aliyuncs.com/SALES/YU%20DAO%20ZY/ydzy%20%281%29.jpg","imgB":null,"layout":"两室一厅一卫","measure":"83.42","towards":"南北通透","saleState":"2","avgPrice":"516","explains":"两室一厅一厨一卫一阳台。\n一层两户，一栋楼有三个单元，一共有5层，南北通透","feature":"景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利","layType":"A","timeStr":"2018-05-16"},{"id":6,"houseId":1,"imgA":"https://myhtest.oss-cn-beijing.aliyuncs.com/SALES/YU%20DAO%20ZY/ydzy%20%282%29.jpg","imgB":null,"layout":"一室一厅一卫一厨","measure":"42","towards":"南北通透","saleState":"2","avgPrice":"507","explains":"一室一厅一厨一卫一阳台。\n一层两户，一栋楼有三个单元，一共有5层，南北通透","feature":"景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利","layType":"A","timeStr":"2018-05-16"}]
          * sessionId : null
          */
 
@@ -69,17 +70,20 @@ public class LayInfoBean {
 
         public static class ObjectBean {
             /**
-             * id : 1
+             * id : 5
              * houseId : 1
-             * imgA : https://myhtest.oss-cn-beijing.aliyuncs.com/image2.jpg
+             * imgA : https://myhtest.oss-cn-beijing.aliyuncs.com/SALES/YU%20DAO%20ZY/ydzy%20%281%29.jpg
              * imgB : null
-             * layout : 三室两厅两卫
-             * measure : 99.8
+             * layout : 两室一厅一卫
+             * measure : 83.42
              * towards : 南北通透
              * saleState : 2
-             * avgPrice : 500
-             * explains : 描述介绍啊手动阀手动阀手动阀手动阀阿斯顿发射点发射点发生
-             * feature : 带阳台,全明格局
+             * avgPrice : 516
+             * explains : 两室一厅一厨一卫一阳台。
+             * 一层两户，一栋楼有三个单元，一共有5层，南北通透
+             * feature : 景观飘窗,全明格局,带阳台,南北通透,有电梯,学区房,地铁房,交通便利
+             * layType : A
+             * timeStr : 2018-05-16
              */
 
             private int id;
@@ -93,6 +97,8 @@ public class LayInfoBean {
             private String avgPrice;
             private String explains;
             private String feature;
+            private String layType;
+            private String timeStr;
 
             public int getId() {
                 return id;
@@ -180,6 +186,22 @@ public class LayInfoBean {
 
             public void setFeature(String feature) {
                 this.feature = feature;
+            }
+
+            public String getLayType() {
+                return layType;
+            }
+
+            public void setLayType(String layType) {
+                this.layType = layType;
+            }
+
+            public String getTimeStr() {
+                return timeStr;
+            }
+
+            public void setTimeStr(String timeStr) {
+                this.timeStr = timeStr;
             }
         }
     }

@@ -17,12 +17,15 @@
         android:orientation="horizontal">
 
         <EditText
+            android:textSize="@dimen/content"
             android:id="@+id/mEt"
             android:layout_width="830px"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
+            android:layout_height="80px"
+            android:layout_marginLeft="50px"
             android:layout_marginTop="10px"
             android:background="#eee"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="10px"
             android:singleLine="true" />
 
         <TextView
@@ -36,5 +39,26 @@
             android:textSize="60px" />
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/two_Rl"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_marginTop="50px"
+        android:background="#eee"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/two_noTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="暂没有找到,换个关键词试试" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/two_activityRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

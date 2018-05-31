@@ -47,7 +47,7 @@
 
         <TextView
             android:id="@+id/hot_floor_details_adapter_lay_info_typeTv"
-            android:layout_width="200px"
+            android:layout_width="230px"
             android:layout_height="wrap_content"
             android:background="#a3a098"
             android:gravity="center_horizontal"
@@ -80,6 +80,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textStyle="bold"
                     android:id="@+id/hot_floor_details_adapter_lay_info_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -88,6 +89,7 @@
                     android:textColor="#000" />
 
                 <TextView
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15px"
@@ -95,6 +97,7 @@
                     android:textColor="#000" />
 
                 <TextView
+                    android:textStyle="bold"
                     android:id="@+id/hot_floor_details_adapter_lay_info_measure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,6 +114,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textStyle="bold"
                     android:id="@+id/hot_floor_details_adapter_lay_info_towards"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -125,6 +129,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="均价"

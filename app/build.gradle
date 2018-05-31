@@ -1,10 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "houseproperty.manyihe.com.myh_android"
-        minSdkVersion 16
+        minSdkVersion 22
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -57,6 +61,8 @@ dependencies {
     compile 'com.sunfusheng:marqueeview:1.0.0'
     //漂亮的吐司
     compile 'com.sdsmdg.tastytoast:tastytoast:0.1.1'
-
+    //左右滑动控件
     compile 'com.jpardogo.materialtabstrip:library:1.1.1'
+    //弹出评论对话框
+    compile 'com.github.loonggg:BottomSheetPopupDialog:v1.0'
 }

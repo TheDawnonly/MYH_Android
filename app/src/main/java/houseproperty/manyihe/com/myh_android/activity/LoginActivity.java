@@ -1,15 +1,10 @@
 package houseproperty.manyihe.com.myh_android.activity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -53,6 +48,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, FindPassWordActivity.class));
+                finish();
             }
         });
         register = findViewById(R.id.register);
@@ -108,6 +104,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
                 valueLogin.setCheck(!isCheck);
             }
         });
+        findViewById(R.id.agent_enterBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, AgentLoginActivity.class));
+                finish();
+            }
+        });
     }
 
 
@@ -130,7 +133,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements ILogi
             //提交edit
             edit.commit();
             finish();
-        }else{
+        } else {
             TastyToast.makeText(getApplicationContext(), loginBean.getResultBean().getMessage(), TastyToast.LENGTH_SHORT, TastyToast.ERROR);
         }
     }

@@ -8,7 +8,7 @@ public class MessageDetailsBean {
 
 
     /**
-     * resultBean : {"code":"0","message":"OK","object":{"id":1,"floorTitle":"促销楼盘","floorPreview":"促销楼盘","floorType":"","floorWriter":"阿满","floorDate":1522044985000,"copyright":"满意何产权","imgUrl":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","content":"<p align=\"left\" style=\"text-align:center;font-family:&quot;font-size:13.3333px;background-color:#FFFFFF;\">\r\n\t<span style=\"background-color:transparent;font-family:&quot;font-size:12px;\">&nbsp;<\/span><span style=\"color:#333333;font-family:Verdana, Arial, Tahoma;font-size:16px;\">&nbsp;&nbsp; &nbsp; 想必这时节，西安的樱花都开放了吧，曾记得七年前，那时，樱花灿烂在枝头。如今family:Verdana, Arial, Tahoma;font-size:16px;\">有福的。愿你有生之年，不要错过耶稣基督。阿们<\/span>\r\n<\/p>"},"sessionId":null}
+     * resultBean : {"code":"0","message":"OK","object":{"id":1,"floorTitle":"促销楼盘","floorPreview":"促销楼盘","floorType":"","floorWriter":"阿满","floorDate":1522044985000,"copyright":"满意何产权","imgUrl":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","content":"<p align=\"left\" style=\"text-align:center;font-family:&quot;font-size:13.3333px;background-color:#FFFFFF;\">\r\n\t<span style=\"background-color:transparent;font-family:&quot;font-size:12px;\">&nbsp;<\/span><span style=\"color:#333333;font-family:Verdana, Arial, Tahoma;font-size:16px;\">&nbsp;&nbsp; &nbsp; 想必这时节，西安的樱花都开放了吧，曾记得七年前，那时，樱花灿烂在枝头。如今family:Verdana, Arial, Tahoma;font-size:16px;\">有福的。愿你有生之年，不要错过耶稣基督。阿们<\/span>\r\n<\/p>","htmlUrl":"ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"},"sessionId":null}
      */
 
     private ResultBeanBean resultBean;
@@ -25,7 +25,7 @@ public class MessageDetailsBean {
         /**
          * code : 0
          * message : OK
-         * object : {"id":1,"floorTitle":"促销楼盘","floorPreview":"促销楼盘","floorType":"","floorWriter":"阿满","floorDate":1522044985000,"copyright":"满意何产权","imgUrl":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","content":"<p align=\"left\" style=\"text-align:center;font-family:&quot;font-size:13.3333px;background-color:#FFFFFF;\">\r\n\t<span style=\"background-color:transparent;font-family:&quot;font-size:12px;\">&nbsp;<\/span><span style=\"color:#333333;font-family:Verdana, Arial, Tahoma;font-size:16px;\">&nbsp;&nbsp; &nbsp; 想必这时节，西安的樱花都开放了吧，曾记得七年前，那时，樱花灿烂在枝头。如今family:Verdana, Arial, Tahoma;font-size:16px;\">有福的。愿你有生之年，不要错过耶稣基督。阿们<\/span>\r\n<\/p>"}
+         * object : {"id":1,"floorTitle":"促销楼盘","floorPreview":"促销楼盘","floorType":"","floorWriter":"阿满","floorDate":1522044985000,"copyright":"满意何产权","imgUrl":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","content":"<p align=\"left\" style=\"text-align:center;font-family:&quot;font-size:13.3333px;background-color:#FFFFFF;\">\r\n\t<span style=\"background-color:transparent;font-family:&quot;font-size:12px;\">&nbsp;<\/span><span style=\"color:#333333;font-family:Verdana, Arial, Tahoma;font-size:16px;\">&nbsp;&nbsp; &nbsp; 想必这时节，西安的樱花都开放了吧，曾记得七年前，那时，樱花灿烂在枝头。如今family:Verdana, Arial, Tahoma;font-size:16px;\">有福的。愿你有生之年，不要错过耶稣基督。阿们<\/span>\r\n<\/p>","htmlUrl":"ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"}
          * sessionId : null
          */
 
@@ -77,8 +77,9 @@ public class MessageDetailsBean {
              * copyright : 满意何产权
              * imgUrl : https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg
              * content : <p align="left" style="text-align:center;font-family:&quot;font-size:13.3333px;background-color:#FFFFFF;">
-             * <span style="background-color:transparent;font-family:&quot;font-size:12px;">&nbsp;</span><span style="color:#333333;font-family:Verdana, Arial, Tahoma;font-size:16px;">&nbsp;&nbsp; &nbsp; 想必这时节，西安的樱花都开放了吧，曾记得七年前，那时，樱花灿烂在枝头。如今family:Verdana, Arial, Tahoma;font-size:16px;">有福的。愿你有生之年，不要错过耶稣基督。阿们</span>
-             * </p>
+             <span style="background-color:transparent;font-family:&quot;font-size:12px;">&nbsp;</span><span style="color:#333333;font-family:Verdana, Arial, Tahoma;font-size:16px;">&nbsp;&nbsp; &nbsp; 想必这时节，西安的樱花都开放了吧，曾记得七年前，那时，樱花灿烂在枝头。如今family:Verdana, Arial, Tahoma;font-size:16px;">有福的。愿你有生之年，不要错过耶稣基督。阿们</span>
+             </p>
+             * htmlUrl : ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
              */
 
             private int id;
@@ -90,6 +91,7 @@ public class MessageDetailsBean {
             private String copyright;
             private String imgUrl;
             private String content;
+            private String htmlUrl;
 
             public int getId() {
                 return id;
@@ -161,6 +163,14 @@ public class MessageDetailsBean {
 
             public void setContent(String content) {
                 this.content = content;
+            }
+
+            public String getHtmlUrl() {
+                return htmlUrl;
+            }
+
+            public void setHtmlUrl(String htmlUrl) {
+                this.htmlUrl = htmlUrl;
             }
         }
     }

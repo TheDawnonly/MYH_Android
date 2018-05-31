@@ -27,8 +27,6 @@ import houseproperty.manyihe.com.myh_android.utils.BannerImageLoader;
  */
 
 public class messageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    public static final int TYPE_HEADER = 0;
-    public static final int TYPE_ONE = 1;
     private Context context;
     private List<MessageBean.ResultBeanBean.ObjectBean.ListBean> list;
     private List<String> imgList = new ArrayList();
@@ -42,60 +40,38 @@ public class messageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == TYPE_HEADER) {
-            View view = View.inflate(context, R.layout.message_banner_adapter, null);
-            MyHeaderHolder holderH = new MyHeaderHolder(view);
-            return holderH;
-        } else {
             View view1 = View.inflate(context, R.layout.message_data_adapter, null);
             MyViewHolder holder = new MyViewHolder(view1);
             return holder;
-        }
 
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        if (holder instanceof MyHeaderHolder) {
-            MyHeaderHolder viewHolder = (MyHeaderHolder) holder;
-            for (int i = 0; i < list.size(); i++) {
-                imgList.add(list.get(i).getImgUrl());
-            }
-            viewHolder.banner.setImageLoader(new BannerImageLoader());
-            viewHolder.banner.setImages(imgList);
-            viewHolder.banner.setBannerAnimation(Transformer.Stack);
-            viewHolder.banner.start();
-        }
-        if (holder instanceof MyViewHolder) {
+
             MyViewHolder viewHolder = (MyViewHolder) holder;
-            viewHolder.tv.setText(list.get(position - 1).getFloorPreview());
-            Uri parse = Uri.parse(list.get(position - 1).getImgUrl());
-            viewHolder.img.setImageURI(parse);
+            viewHolder.tv.setText(list.get(position).getFloorTitle());
+            if (list.get(position).getImgUrl()!=null){
+                Uri parse = Uri.parse(list.get(position).getImgUrl());
+                viewHolder.img.setImageURI(parse);
+            }
+
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, MessageDetailsActivity.class);
                     Bundle bundle = new Bundle();
-                    bundle.putInt("messageID", list.get(position - 1).getId());
+                    bundle.putInt("floorId", list.get(position).getId());
                     intent.putExtras(bundle);
                     context.startActivity(intent);
                 }
             });
-        }
+
     }
 
     @Override
     public int getItemCount() {
-        return list == null ? 0 : list.size() + 1;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (position == 0) {
-            return TYPE_HEADER;
-        } else {
-            return TYPE_ONE;
-        }
+        return list == null ? 0 : list.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
@@ -109,25 +85,4 @@ public class messageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             img = itemView.findViewById(R.id.message_data_sdv);
         }
     }
-
-    class MyHeaderHolder extends RecyclerView.ViewHolder {
-        Banner banner;
-
-        //该够造方法接受的itemView参数 就是item布局的view对象
-        public MyHeaderHolder(View itemView) {
-            super(itemView);
-            banner = itemView.findViewById(R.id.message_banner);
-            banner.setOnBannerListener(new OnBannerListener() {
-                @Override
-                public void OnBannerClick(int position) {
-                    Intent intent = new Intent(context, MessageDetailsActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("messageID", list.get(position).getId());
-                    intent.putExtras(bundle);
-                    context.startActivity(intent);
-                }
-            });
-        }
-    }
-
 }

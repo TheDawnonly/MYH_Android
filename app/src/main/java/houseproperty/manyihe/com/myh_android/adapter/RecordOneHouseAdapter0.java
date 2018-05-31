@@ -43,9 +43,6 @@ public class RecordOneHouseAdapter0 extends RecyclerView.Adapter<RecordOneHouseA
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        Log.d("RecordOneHouseAdapter0", "============"+recordList.get(position).getTitle());
-        Log.d("RecordOneHouseAdapter0", "============" + recordList.get(position).getAddress());
-        Log.d("RecordOneHouseAdapter0", "============" + recordList.get(position).getMainImg());
         if (recordList.size() != 0) {
             String mainImg = recordList.get(position).getMainImg();
             Uri uri = Uri.parse(mainImg);

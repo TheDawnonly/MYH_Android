@@ -1,15 +1,10 @@
 package houseproperty.manyihe.com.myh_android.activity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -22,6 +17,7 @@ import houseproperty.manyihe.com.myh_android.bean.RegisterBean;
 import houseproperty.manyihe.com.myh_android.bean.VailCodeBean;
 import houseproperty.manyihe.com.myh_android.presenter.RegisterPresenter;
 import houseproperty.manyihe.com.myh_android.presenter.VailCodePresenter;
+import houseproperty.manyihe.com.myh_android.utils.CountDownTimerUtils;
 import houseproperty.manyihe.com.myh_android.utils.RadioButtonIsBoolean;
 import houseproperty.manyihe.com.myh_android.utils.PhoneNumIsBoolean;
 import houseproperty.manyihe.com.myh_android.view.IRegisterBeanView;
@@ -33,7 +29,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
     private RadioButtonIsBoolean globalValue = new RadioButtonIsBoolean();
     private RadioButton radioButton;
     private Button register_btnNo, register_btnYes;
-    private TextView valiCodeTv;
+    private TextView valiCodeBtn;
     private VailCodePresenter vailCodePresenter;
 
     @Override
@@ -48,7 +44,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
         register_btnNo = findViewById(R.id.register_btnNo);
         radioButton = findViewById(R.id.radio);
         register_btnYes = findViewById(R.id.register_btnYes);
-        valiCodeTv = findViewById(R.id.register_valiCode_tv);
+        valiCodeBtn = findViewById(R.id.register_valiCode_Btn);
         findViewById(R.id.register_loginBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +52,7 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
                 finish();
             }
         });
-        valiCodeTv.setOnClickListener(new View.OnClickListener() {
+        valiCodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String s = mobileEt.getText().toString();
@@ -65,6 +61,8 @@ public class RegisterActivity extends BaseActivity<RegisterPresenter> implements
                     if (isMobile == true) {
                         vailCodePresenter.showVailCode(s, "regist");
                         TastyToast.makeText(getApplicationContext(), "验证码已发送", TastyToast.LENGTH_SHORT, TastyToast.SUCCESS);
+                        CountDownTimerUtils utils = new CountDownTimerUtils(valiCodeBtn, 60000, 1000);
+                        utils.start();
                     } else {
                         TastyToast.makeText(getApplicationContext(), "手机号有误", TastyToast.LENGTH_SHORT, TastyToast.ERROR);
                     }

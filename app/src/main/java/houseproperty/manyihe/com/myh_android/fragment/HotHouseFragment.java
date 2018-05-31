@@ -2,30 +2,26 @@ package houseproperty.manyihe.com.myh_android.fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import java.util.List;
 
 import houseproperty.manyihe.com.myh_android.R;
-import houseproperty.manyihe.com.myh_android.activity.NewHouseMoreActivity;
+import houseproperty.manyihe.com.myh_android.activity.AgentMoreActivity;
+import houseproperty.manyihe.com.myh_android.activity.HotFloorMoreActivity;
 import houseproperty.manyihe.com.myh_android.adapter.RecordOneHouseAdapter;
 import houseproperty.manyihe.com.myh_android.adapter.RecordOneHouseAdapter0;
 import houseproperty.manyihe.com.myh_android.bean.BroseRecordBean;
 import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
-import houseproperty.manyihe.com.myh_android.presenter.HousingResourcePresenterTypeNew;
+import houseproperty.manyihe.com.myh_android.presenter.HousingResourcePresenterTypeHot;
 import houseproperty.manyihe.com.myh_android.presenter.ViewBroseRecordPresenter;
 import houseproperty.manyihe.com.myh_android.view.IBroseRecordView;
-import houseproperty.manyihe.com.myh_android.view.IHousingResourceViewTypeNew;
+import houseproperty.manyihe.com.myh_android.view.IHousingResourceViewTypeHot;
 
-public class HotHouseFragment extends BaseFragment<ViewBroseRecordPresenter> implements IBroseRecordView, IHousingResourceViewTypeNew {
+public class HotHouseFragment extends BaseFragment<ViewBroseRecordPresenter> implements IBroseRecordView, IHousingResourceViewTypeHot {
 
     private SharedPreferences sp;
     private RelativeLayout noDataRl;
@@ -47,7 +43,13 @@ public class HotHouseFragment extends BaseFragment<ViewBroseRecordPresenter> imp
         view.findViewById(R.id.btn_tab_layout_more_hot).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), NewHouseMoreActivity.class));
+                startActivity(new Intent(getContext(), HotFloorMoreActivity.class));
+            }
+        });
+        view.findViewById(R.id.hot_house_tab_Agent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), AgentMoreActivity.class));
             }
         });
         return view;
@@ -57,10 +59,17 @@ public class HotHouseFragment extends BaseFragment<ViewBroseRecordPresenter> imp
     public void createPresenter() {
         //获取SP
         sp = getActivity().getSharedPreferences("config", getActivity().MODE_PRIVATE);
-        int id = sp.getInt("id", 0);
-        presenter = new ViewBroseRecordPresenter(this);
-        presenter.showViewBroseRecordPresenter(id, 0);
-        HousingResourcePresenterTypeNew typeNew = new HousingResourcePresenterTypeNew(this);
+        String code = sp.getString("code", "");
+        if (code.equals("0")) {
+            int id = sp.getInt("id", 0);
+            presenter = new ViewBroseRecordPresenter(this);
+            presenter.showViewBroseRecordPresenter(id, 0);
+        } else {
+            presenter = new ViewBroseRecordPresenter(this);
+            presenter.showViewBroseRecordPresenter(null, 0);
+        }
+
+        HousingResourcePresenterTypeHot typeNew = new HousingResourcePresenterTypeHot(this);
         typeNew.ShowData(1, 2);
     }
 
@@ -88,7 +97,7 @@ public class HotHouseFragment extends BaseFragment<ViewBroseRecordPresenter> imp
     }
 
     @Override
-    public void showResourceHotFloorTypeNew(HouseInfoBean hotData) {
+    public void showResourceHotFloor(HouseInfoBean hotData) {
         oneHouseList = hotData.getResultBean().getObject().getList();
         manager = new LinearLayoutManager(getContext());
         //设置启用平滑滚动条

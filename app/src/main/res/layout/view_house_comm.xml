@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:layout_marginTop="20px"
         android:id="@+id/comm_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -18,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="40px"
             fresco:actualImageScaleType="centerCrop"
-            fresco:placeholderImage="@mipmap/ic_launcher"
+            fresco:placeholderImage="@mipmap/head_img"
             fresco:placeholderImageScaleType="centerCrop"
             fresco:roundAsCircle="true" />
 
@@ -30,6 +31,7 @@
             android:layout_marginLeft="20px"
             android:layout_toRightOf="@id/view_house_comm_sdv"
             android:text="爱因斯坦诺维奇凯奇"
+            android:textColor="#000"
             android:textSize="40px" />
 
         <TextView
@@ -37,35 +39,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="15px"
+            android:layout_marginLeft="25px"
             android:layout_toRightOf="@id/view_house_comm_nameTv"
-            android:paddingBottom="20px"
-            android:text="2016" />
+            android:text="2018"
+            android:textSize="30px" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/view_house_comm_Reply"
+            android:layout_width="120px"
+            android:layout_height="60px"
+            android:textSize="@dimen/content40"
             android:layout_alignParentRight="true"
+            android:background="@drawable/bg_gray"
             android:layout_centerVertical="true"
-            android:layout_marginRight="30px"
+            android:layout_marginRight="50px"
             android:text="回复" />
     </RelativeLayout>
 
-
     <TextView
+        android:textSize="@dimen/content50"
         android:id="@+id/view_house_comm_contentTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/comm_rv"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="就假装这个是内容" />
+        android:textColor="#000" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/view_house_comm_Rv"
+        android:layout_marginTop="30px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/view_house_comm_contentTv"></android.support.v7.widget.RecyclerView>
 
+    <LinearLayout
+        android:id="@+id/view_house_comm_Ll"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+    </LinearLayout>
 
 </RelativeLayout>

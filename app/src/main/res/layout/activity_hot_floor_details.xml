@@ -24,16 +24,17 @@
                 android:layout_marginTop="205px"
                 android:src="@mipmap/back" />
 
-            <ImageView
-                android:id="@+id/hot_floor_details_img"
+            <com.youth.banner.Banner
+                android:id="@+id/hot_floor_details_banner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="800px"></com.youth.banner.Banner>
+
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/hot_floor_details_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/hot_floor_details_img"
+                android:layout_below="@id/hot_floor_details_banner"
                 android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
 
             <android.support.v7.widget.RecyclerView
@@ -80,6 +81,7 @@
                         android:text="您可以通过电话联系经纪人" />
 
                     <Button
+                        android:id="@+id/activity_hotMoreBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -97,8 +99,8 @@
                 <com.yarolegovich.discretescrollview.DiscreteScrollView
                     android:id="@+id/hot_floor_floor_detail_dis"
                     android:layout_width="match_parent"
-                    android:layout_height="350px"
-                    android:layout_marginTop="45px"
+                    android:layout_height="300px"
+                    android:layout_marginTop="30px"
                     app:dsv_orientation="horizontal"></com.yarolegovich.discretescrollview.DiscreteScrollView>
             </LinearLayout>
 
@@ -129,12 +131,15 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/hot_floor_floor_detail_write"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="50px"
-                        android:text="写点评" />
+                        android:drawableLeft="@mipmap/pen"
+                        android:text="写点评"
+                        android:textSize="@dimen/content45" />
                 </RelativeLayout>
 
                 <View
@@ -150,14 +155,58 @@
                     android:layout_marginTop="25px"></android.support.v7.widget.RecyclerView>
 
                 <Button
+                    android:background="@drawable/bg_gray"
+                    android:id="@+id/hot_floor_details_MoreComm"
                     android:layout_width="800px"
-                    android:layout_height="wrap_content"
+                    android:layout_height="85px"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="30px"
+                    android:layout_marginTop="40px"
+                    android:layout_marginBottom="40px"
                     android:text="查看更多点评" />
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="200px" />
+                    android:layout_height="20px"
+                    android:background="@drawable/bg_view" />
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50px"
+                        android:background="@null"
+                        android:text="热门楼盘"
+                        android:textSize="50px"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/hot_floor_details_hotMoreBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@null"
+                        android:text="更多" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginTop="20px"
+                    android:background="#eee" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/hot_floor_details_hotRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20px"></android.support.v7.widget.RecyclerView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="180px" />
             </LinearLayout>
 
 
@@ -179,10 +228,13 @@
             android:text="收藏" />
 
         <Button
+            android:id="@+id/hot_floor_details_PhoneBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50px"
-            android:text="免费咨询经纪人" />
+            android:background="#6c0"
+            android:text="免费咨询经纪人"
+            android:textColor="#fff" />
     </LinearLayout>
 
 

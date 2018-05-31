@@ -36,7 +36,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="30px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/setting" />
                 </RelativeLayout>
 
 
@@ -51,14 +51,14 @@
                         android:layout_width="200px"
                         android:layout_height="200px"
                         android:layout_marginLeft="50px"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@mipmap/head_img" />
 
                     <ImageView
                         android:id="@+id/my_img_user_login"
                         android:layout_width="200px"
                         android:layout_height="200px"
                         android:layout_marginLeft="50px"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@mipmap/head_img"
                         android:visibility="gone" />
 
                     <Button
@@ -68,14 +68,16 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="50px"
                         android:background="@null"
-                        android:text="登录" />
+                        android:text="登录"
+                        android:textSize="@dimen/content40" />
 
                     <TextView
                         android:id="@+id/my_tv_gang"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="/" />
+                        android:text="/"
+                        android:textSize="@dimen/content40" />
 
                     <Button
                         android:id="@+id/my_register"
@@ -83,14 +85,15 @@
                         android:layout_height="80px"
                         android:layout_gravity="center_vertical"
                         android:background="@null"
-                        android:text="注册" />
+                        android:text="注册"
+                        android:textSize="@dimen/content40" />
 
                     <TextView
                         android:id="@+id/my_mobile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="123456789"
+                        android:layout_marginLeft="30px"
                         android:visibility="gone" />
                 </LinearLayout>
 
@@ -107,7 +110,8 @@
                         android:gravity="center_vertical"
                         android:paddingLeft="30px"
                         android:paddingRight="50px"
-                        android:text="我的活动" />
+                        android:text="我的活动"
+                        android:textSize="@dimen/content36" />
                 </RelativeLayout>
 
             </LinearLayout>
@@ -125,9 +129,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/personal_information"
                     android:gravity="center_horizontal"
-                    android:text="个人信息" />
+                    android:text="个人信息"
+                    android:textSize="@dimen/content36" />
 
                 <RadioButton
                     android:id="@+id/record"
@@ -135,27 +140,43 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/record"
                     android:gravity="center_horizontal"
-                    android:text="浏览记录" />
+                    android:text="浏览记录"
+                    android:textSize="@dimen/content36" />
 
                 <RadioButton
+                    android:id="@+id/houseManagement"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableTop="@mipmap/administration"
+                    android:gravity="center_horizontal"
+                    android:text="房源管理"
+                    android:textSize="@dimen/content36"
+                    android:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/MyCollection"
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
                     android:drawableTop="@mipmap/ic_launcher"
                     android:gravity="center_horizontal"
-                    android:text="房源管理" />
+                    android:text="我的收藏"
+                    android:textSize="@dimen/content36" />
 
                 <RadioButton
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/comment"
                     android:gravity="center_horizontal"
-                    android:text="我的评论" />
+                    android:text="我的评论"
+                    android:textSize="@dimen/content36" />
 
             </RadioGroup>
 
@@ -171,36 +192,40 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/release_new_house"
                     android:gravity="center_horizontal"
-                    android:text="发布新房" />
+                    android:text="发布新房"
+                    android:textSize="@dimen/content36" />
 
                 <RadioButton
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/calculation"
                     android:gravity="center_horizontal"
-                    android:text="房贷计算器" />
+                    android:text="房贷计算器"
+                    android:textSize="@dimen/content36" />
 
                 <RadioButton
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/write"
                     android:gravity="center_horizontal"
-                    android:text="用户反馈" />
+                    android:text="用户反馈"
+                    android:textSize="@dimen/content36" />
 
                 <RadioButton
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:button="@null"
-                    android:drawableTop="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/my_sign_up"
                     android:gravity="center_horizontal"
-                    android:text="我的报名" />
+                    android:text="我的报名"
+                    android:textSize="@dimen/content36" />
 
             </RadioGroup>
 
@@ -219,11 +244,94 @@
                 android:layout_height="15px"
                 android:background="@drawable/bg_view" />
 
-            <android.support.v7.widget.RecyclerView
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="130px"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="20px">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:text="客服咨询"
+                    android:textSize="@dimen/content45" />
+
+                <ImageView
+                    android:layout_width="90px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/youjiantou" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="20px"
+                android:background="#eee" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="130px"
+                android:layout_marginLeft="20px"
+                android:layout_marginTop="20px">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30px"
+                    android:text="关注我们"
+                    android:textSize="@dimen/content45" />
+
+                <ImageView
+                    android:layout_width="90px"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/youjiantou" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16px"
+                android:background="#eee" />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:descendantFocusability="afterDescendants"
-                android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
+                android:layout_marginLeft="20px"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:text="推荐房源"
+                    android:textColor="#000"
+                    android:textSize="@dimen/content50" />
+
+                <Button
+                    android:id="@+id/my_fragment_btnMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:text="更多"
+                    android:textColor="#8e8e8e"
+                    android:textSize="@dimen/content45" />
+            </RelativeLayout>
+
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/my_fragmentRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15px"
+                    android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
 
             <View
                 android:layout_width="match_parent"

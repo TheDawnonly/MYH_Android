@@ -5,7 +5,7 @@ import java.util.List;
 public class selectAgentBean {
 
     /**
-     * resultBean : {"code":"0","message":"OK","object":{"pageNum":1,"pageSize":10,"size":2,"startRow":1,"endRow":2,"total":2,"pages":1,"list":[{"id":1,"name":"张三","mobile":"13131190980","area":"河北","project":"碧桂园","tag":"客户好评","store":"河北店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"1","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","page":null},{"id":2,"name":"李四","mobile":"13131190980","area":"北京","project":"御道庄园","tag":"客户好评","store":"北京店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"2","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%282%29%5B1%5D.jpg","page":null}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]},"sessionId":null}
+     * resultBean : {"code":"0","message":"OK","object":{"pageNum":1,"pageSize":10,"size":2,"startRow":1,"endRow":2,"total":2,"pages":1,"list":[{"id":1,"name":"张三","mobile":"13131190980","area":"河北","city":"承德","detailArea":"什么区","project":"碧桂园","tag":"客户好评","store":"河北店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"1","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","page":null},{"id":2,"name":"李四","mobile":"13131190980","area":"北京","city":"承德","detailArea":"什么区","project":"御道庄园","tag":"客户好评","store":"北京店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"2","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%282%29%5B1%5D.jpg","page":null}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]},"sessionId":null}
      */
 
     private ResultBeanBean resultBean;
@@ -22,7 +22,7 @@ public class selectAgentBean {
         /**
          * code : 0
          * message : OK
-         * object : {"pageNum":1,"pageSize":10,"size":2,"startRow":1,"endRow":2,"total":2,"pages":1,"list":[{"id":1,"name":"张三","mobile":"13131190980","area":"河北","project":"碧桂园","tag":"客户好评","store":"河北店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"1","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","page":null},{"id":2,"name":"李四","mobile":"13131190980","area":"北京","project":"御道庄园","tag":"客户好评","store":"北京店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"2","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%282%29%5B1%5D.jpg","page":null}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}
+         * object : {"pageNum":1,"pageSize":10,"size":2,"startRow":1,"endRow":2,"total":2,"pages":1,"list":[{"id":1,"name":"张三","mobile":"13131190980","area":"河北","city":"承德","detailArea":"什么区","project":"碧桂园","tag":"客户好评","store":"河北店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"1","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","page":null},{"id":2,"name":"李四","mobile":"13131190980","area":"北京","city":"承德","detailArea":"什么区","project":"御道庄园","tag":"客户好评","store":"北京店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"2","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%282%29%5B1%5D.jpg","page":null}],"firstPage":1,"prePage":0,"nextPage":0,"lastPage":1,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1]}
          * sessionId : null
          */
 
@@ -72,7 +72,7 @@ public class selectAgentBean {
              * endRow : 2
              * total : 2
              * pages : 1
-             * list : [{"id":1,"name":"张三","mobile":"13131190980","area":"河北","project":"碧桂园","tag":"客户好评","store":"河北店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"1","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","page":null},{"id":2,"name":"李四","mobile":"13131190980","area":"北京","project":"御道庄园","tag":"客户好评","store":"北京店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"2","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%282%29%5B1%5D.jpg","page":null}]
+             * list : [{"id":1,"name":"张三","mobile":"13131190980","area":"河北","city":"承德","detailArea":"什么区","project":"碧桂园","tag":"客户好评","store":"河北店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"1","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%281%29%5B1%5D.jpg","page":null},{"id":2,"name":"李四","mobile":"13131190980","area":"北京","city":"承德","detailArea":"什么区","project":"御道庄园","tag":"客户好评","store":"北京店","watchTimes":33,"dealCount":12,"score":0,"createTime":1523503722000,"agentLevel":"2","agentImg":"https://myhtest.oss-cn-beijing.aliyuncs.com/FLOOR/floor%2520%282%29%5B1%5D.jpg","page":null}]
              * firstPage : 1
              * prePage : 0
              * nextPage : 0
@@ -254,6 +254,8 @@ public class selectAgentBean {
                  * name : 张三
                  * mobile : 13131190980
                  * area : 河北
+                 * city : 承德
+                 * detailArea : 什么区
                  * project : 碧桂园
                  * tag : 客户好评
                  * store : 河北店
@@ -270,6 +272,8 @@ public class selectAgentBean {
                 private String name;
                 private String mobile;
                 private String area;
+                private String city;
+                private String detailArea;
                 private String project;
                 private String tag;
                 private String store;
@@ -311,6 +315,22 @@ public class selectAgentBean {
 
                 public void setArea(String area) {
                     this.area = area;
+                }
+
+                public String getCity() {
+                    return city;
+                }
+
+                public void setCity(String city) {
+                    this.city = city;
+                }
+
+                public String getDetailArea() {
+                    return detailArea;
+                }
+
+                public void setDetailArea(String detailArea) {
+                    this.detailArea = detailArea;
                 }
 
                 public String getProject() {

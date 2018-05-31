@@ -13,9 +13,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px">
 
         <ImageView
+            android:id="@+id/agent_detail_back"
             android:layout_width="80px"
             android:layout_height="60px"
             android:layout_centerVertical="true"
@@ -29,11 +31,11 @@
             android:layout_centerVertical="true"
             android:text="经纪人主页"
             android:textColor="#373737"
-            android:textSize="40px" />
+            android:textSize="60px" />
 
         <ImageView
-            android:layout_width="50px"
-            android:layout_height="50px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20px"
             android:src="@mipmap/ic_launcher" />
@@ -73,10 +75,10 @@
                     fresco:roundAsCircle="true" />
 
                 <LinearLayout
-                    android:layout_marginTop="15px"
                     android:layout_width="400px"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40px"
+                    android:layout_marginTop="15px"
                     android:orientation="vertical">
 
                     <TextView
@@ -262,6 +264,7 @@
             android:text="加关注" />
 
         <Button
+            android:id="@+id/agent_detail_PhoneBtn"
             android:layout_width="450px"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

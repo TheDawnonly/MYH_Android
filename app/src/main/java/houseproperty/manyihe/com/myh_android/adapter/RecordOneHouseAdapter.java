@@ -46,8 +46,11 @@ public class RecordOneHouseAdapter extends RecyclerView.Adapter<RecordOneHouseAd
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         if (oneHouseList.size() != 0) {
             String mainImg = oneHouseList.get(position).getMainImg();
-            Uri uri = Uri.parse(mainImg);
-            holder.sdvImg.setImageURI(uri);
+            if (mainImg != null) {
+                Uri uri = Uri.parse(mainImg);
+                holder.sdvImg.setImageURI(uri);
+            }
+
             holder.titleTv.setText(oneHouseList.get(position).getTitle());
             holder.addressTv.setText(oneHouseList.get(position).getAddress());
             holder.layoutTv.setText(oneHouseList.get(position).getLayout());
@@ -63,7 +66,7 @@ public class RecordOneHouseAdapter extends RecyclerView.Adapter<RecordOneHouseAd
                 public void onClick(View v) {
                     int id = oneHouseList.get(position).getId();
                     Log.d("RecordOneHouseAdapter", "==============" + "id:" + id);
-                    Intent intent = new Intent(context, NewHouseFloorDetailsActivity.class);
+                    Intent intent = new Intent(context, HotFloorDetailsActivity.class);
                     intent.putExtra("houseId", id);
                     context.startActivity(intent);
                 }

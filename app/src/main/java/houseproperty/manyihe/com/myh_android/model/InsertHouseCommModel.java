@@ -20,14 +20,16 @@ public class InsertHouseCommModel implements IInsertHouseCommModel {
 
 
     @Override
-    public void showComm(callBackSuccessInsertCommBean bean, int userId, int houseId, String comment, int score, int pageNum, int pageSize) {
+    public void showComm(final callBackSuccessInsertCommBean bean, int userId, int houseId, String comment, int score, int pageNum, int pageSize) {
         Map<Object, Object> map = new HashMap<>();
+        Map<String, Integer> pageMap = new HashMap<>();
+        pageMap.put("pageNum", pageNum);
+        pageMap.put("pageSize", pageSize);
         map.put("userId", userId);
         map.put("houseId", houseId);
         map.put("comment", comment);
         map.put("score", score);
-        map.put("pageNum", pageNum);
-        map.put("pageSize", pageSize);
+        map.put("page", pageMap);
         Gson gson = new Gson();
         String Json = gson.toJson(map);
         ViseHttp.POST("insertHouseComm")
@@ -38,7 +40,7 @@ public class InsertHouseCommModel implements IInsertHouseCommModel {
 
                     @Override
                     public void onSuccess(InsertHouseCommBean data) {
-
+                        bean.getComm(data);
                     }
 
                     @Override

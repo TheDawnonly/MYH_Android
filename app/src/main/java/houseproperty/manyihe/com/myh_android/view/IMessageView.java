@@ -9,6 +9,4 @@ import houseproperty.manyihe.com.myh_android.bean.MessageBean;
 
 public interface IMessageView {
     void showData(MessageBean MessageBean);
-
-    void failMsg(String msg);
 }

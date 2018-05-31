@@ -3,13 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical">
 
     <RelativeLayout
-        android:visibility="gone"
         android:id="@+id/new_house_record_NoData"
         android:layout_width="match_parent"
-        android:layout_height="800px">
+        android:layout_height="900px"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/new_house_record_img"
@@ -17,14 +19,27 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_launcher" />
+            android:src="@mipmap/head_img" />
 
         <TextView
+            android:id="@+id/new_house_record_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/new_house_record_img"
             android:layout_centerHorizontal="true"
             android:text="暂无记录" />
+
+        <TextView
+            android:layout_marginTop="30px"
+            android:id="@+id/new_house_tab_Agent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/new_house_record_tv"
+            android:layout_centerHorizontal="true"
+            android:background="#eee"
+            android:text="马上找经纪人看房"
+            android:textColor="#2b4fa3"
+            android:textSize="@dimen/content" />
     </RelativeLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -38,7 +53,8 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/new_house_record_rv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
 
             <View
                 android:id="@+id/new_house_record_view"
@@ -54,33 +70,34 @@
                 android:layout_below="@id/new_house_record_view">
 
                 <TextView
-                    android:textSize="50px"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="35px"
                     android:text="推荐一手房"
-                    android:textColor="#000" />
+                    android:textColor="#000"
+                    android:textSize="50px" />
 
                 <Button
-                    android:layout_marginTop="20px"
                     android:id="@+id/btn_tab_layout_more"
                     android:layout_width="140px"
                     android:layout_height="70px"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="40px"
+                    android:layout_marginTop="20px"
                     android:background="@null"
                     android:text="更多" />
             </RelativeLayout>
 
 
             <android.support.v7.widget.RecyclerView
-                android:layout_marginTop="20px"
                 android:id="@+id/one_new_house_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rl"></android.support.v7.widget.RecyclerView>
+                android:layout_below="@id/rl"
+                android:layout_marginTop="20px"
+                android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 

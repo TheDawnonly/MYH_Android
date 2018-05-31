@@ -17,6 +17,7 @@ import houseproperty.manyihe.com.myh_android.bean.FindPassWordBean;
 import houseproperty.manyihe.com.myh_android.bean.VailCodeBean;
 import houseproperty.manyihe.com.myh_android.presenter.FindPassPresenter;
 import houseproperty.manyihe.com.myh_android.presenter.VailCodePresenter;
+import houseproperty.manyihe.com.myh_android.utils.CountDownTimerUtils;
 import houseproperty.manyihe.com.myh_android.utils.PhoneNumIsBoolean;
 import houseproperty.manyihe.com.myh_android.utils.RadioButtonIsBoolean;
 import houseproperty.manyihe.com.myh_android.view.IFindPassWordBeanView;
@@ -26,7 +27,7 @@ public class FindPassWordActivity extends BaseActivity<FindPassPresenter> implem
 
 
     private ImageView findBack;
-    private TextView findValiCodeTv;
+    private Button findValiCodeBtn;
     private EditText findPasswordMobile, findPasswordValiCode, findPassword;
     private String strMobile, strValiCode, strPassword;
     private RadioButton findPasswordRadio;
@@ -97,7 +98,8 @@ public class FindPassWordActivity extends BaseActivity<FindPassPresenter> implem
                 valueLogin.setCheck(!isCheck);
             }
         });
-        findValiCodeTv.setOnClickListener(new View.OnClickListener() {
+
+        findValiCodeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String s = findPasswordMobile.getText().toString();
@@ -105,6 +107,8 @@ public class FindPassWordActivity extends BaseActivity<FindPassPresenter> implem
                     boolean isMobile = PhoneNumIsBoolean.isMobile(s);
                     if (isMobile == true) {
                         vailCodePresenter.showVailCode(s, "revamp");
+                        CountDownTimerUtils utils = new CountDownTimerUtils(findValiCodeBtn, 60000, 1000);
+                        utils.start();
                     } else {
                         TastyToast.makeText(getApplicationContext(), "手机号有误", TastyToast.LENGTH_SHORT, TastyToast.ERROR);
                     }
@@ -146,7 +150,7 @@ public class FindPassWordActivity extends BaseActivity<FindPassPresenter> implem
     private void initView() {
         findBack = (ImageView) findViewById(R.id.find_back);
         findPasswordMobile = (EditText) findViewById(R.id.find_password_mobile);
-        findValiCodeTv = (TextView) findViewById(R.id.find_password_valiCode_tv);
+        findValiCodeBtn = findViewById(R.id.find_password_valiCode_tv);
         findPasswordValiCode = (EditText) findViewById(R.id.find_password_valiCode);
         findPassword = (EditText) findViewById(R.id.new_password);
         findPasswordRadio = (RadioButton) findViewById(R.id.find_password_radio);

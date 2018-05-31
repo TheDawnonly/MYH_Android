@@ -19,7 +19,7 @@ import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
 public class ViewBroseRecordModel implements IViewBroseRecordModel {
 
     @Override
-    public void showRecode(final callBackSuccessRecordBean bean, int id, int type) {
+    public void showRecode(final callBackSuccessRecordBean bean, Integer id, int type) {
         Map<String, Integer> map = new HashMap<>();
         map.put("id", id);
         map.put("type", type);

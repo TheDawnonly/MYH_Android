@@ -28,7 +28,7 @@ public class ViewBroseRecordPresenter implements IPresenter<IBroseRecordView> {
         mRefView.clear();
     }
 
-    public void showViewBroseRecordPresenter(int id, int type) {
+    public void showViewBroseRecordPresenter(Integer id, int type) {
         model.showRecode(new IViewBroseRecordModel.callBackSuccessRecordBean() {
             @Override
             public void getRecode(BroseRecordBean bean) {

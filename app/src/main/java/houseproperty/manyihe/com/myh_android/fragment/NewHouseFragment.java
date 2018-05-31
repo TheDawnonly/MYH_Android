@@ -11,9 +11,11 @@ import android.widget.RelativeLayout;
 import java.util.List;
 
 import houseproperty.manyihe.com.myh_android.R;
+import houseproperty.manyihe.com.myh_android.activity.AgentMoreActivity;
 import houseproperty.manyihe.com.myh_android.activity.NewHouseMoreActivity;
 import houseproperty.manyihe.com.myh_android.adapter.RecordOneHouseAdapter;
 import houseproperty.manyihe.com.myh_android.adapter.RecordOneHouseAdapter0;
+import houseproperty.manyihe.com.myh_android.adapter.RecordOneNewHouseAdapter;
 import houseproperty.manyihe.com.myh_android.bean.BroseRecordBean;
 import houseproperty.manyihe.com.myh_android.bean.HouseInfoBean;
 import houseproperty.manyihe.com.myh_android.presenter.HousingResourcePresenterTypeNew;
@@ -45,6 +47,12 @@ public class NewHouseFragment extends BaseFragment<ViewBroseRecordPresenter> imp
                 startActivity(new Intent(getContext(), NewHouseMoreActivity.class));
             }
         });
+        view.findViewById(R.id.new_house_tab_Agent).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), AgentMoreActivity.class));
+            }
+        });
         return view;
     }
 
@@ -52,9 +60,15 @@ public class NewHouseFragment extends BaseFragment<ViewBroseRecordPresenter> imp
     public void createPresenter() {
         //获取SP
         sp = getActivity().getSharedPreferences("config", getActivity().MODE_PRIVATE);
-        int id = sp.getInt("id", 0);
-        presenter = new ViewBroseRecordPresenter(this);
-        presenter.showViewBroseRecordPresenter(id, 1);
+        String code = sp.getString("code", "");
+        if (code.equals("0")) {
+            int id = sp.getInt("id", 0);
+            presenter = new ViewBroseRecordPresenter(this);
+            presenter.showViewBroseRecordPresenter(id, 1);
+        } else {
+            presenter = new ViewBroseRecordPresenter(this);
+            presenter.showViewBroseRecordPresenter(null, 1);
+        }
         HousingResourcePresenterTypeNew typeNew = new HousingResourcePresenterTypeNew(this);
         typeNew.ShowData(1, 2);
     }
@@ -94,7 +108,7 @@ public class NewHouseFragment extends BaseFragment<ViewBroseRecordPresenter> imp
         //具有固定大小
         oneHouseRv.setHasFixedSize(true);
         oneHouseRv.setNestedScrollingEnabled(false);
-        RecordOneHouseAdapter adapter = new RecordOneHouseAdapter(getContext(), oneHouseList);
+        RecordOneNewHouseAdapter adapter = new RecordOneNewHouseAdapter(getContext(), oneHouseList);
         oneHouseRv.setAdapter(adapter);
     }
 }

@@ -2,6 +2,7 @@ package houseproperty.manyihe.com.myh_android.activity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -39,6 +40,7 @@ public class SettingActivity extends BaseActivity {
                 SharedPreferences.Editor editor = sp.edit();
                 editor.clear();
                 editor.commit();
+                String name = sp.getString("name", "");
                 finish();
             }
         });

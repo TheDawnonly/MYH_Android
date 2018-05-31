@@ -33,9 +33,14 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+    <ImageView
         android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:src="@mipmap/ic_launcher" />
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
         android:id="@+id/message_twink"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.RecyclerView

@@ -6,14 +6,57 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="houseproperty.manyihe.com.myh_android.activity.HotFloorDetailsMoreActivity">
+    tools:context="houseproperty.manyihe.com.myh_android.activity.HotFloorMoreActivity">
 
     <houseproperty.manyihe.com.myh_android.utils.CompatToolbar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></houseproperty.manyihe.com.myh_android.utils.CompatToolbar>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/hot_floor_details_more_rv"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px">
+
+        <ImageView
+            android:id="@+id/hot_floor_details_more_back"
+            android:layout_width="130px"
+            android:layout_height="60px"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="热门楼盘"
+            android:textColor="#000"
+            android:textSize="@dimen/title"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20px" />
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/hot_floor_details_more_trl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/hot_floor_details_more_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+
 </LinearLayout>
